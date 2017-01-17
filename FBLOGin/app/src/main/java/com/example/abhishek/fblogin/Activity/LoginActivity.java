@@ -24,12 +24,13 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
-
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
@@ -40,6 +41,9 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
@@ -283,12 +287,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.d("abhi", "OnSuccess");
             (session).setLogin(true);
             AccessToken accessToken = loginResult.getAccessToken();
+            GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                @Override
+                public void onCompleted(JSONObject object, GraphResponse response) {
+                    Log.i("LoginActivity", response.toString());
+                    // Get facebook data from login
+                    //Bundle bFacebookData = getFacebookData(object);
+                    //email=bFacebookData.getString("email");
+                }
+            });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "email,gender");
+            request.setParameters(parameters);
+            request.executeAsync();
+
             Profile profile = Profile.getCurrentProfile();
             if (profile != null) {
                 user_id = (profile.getId());
                 personName = profile.getName();
                 photoUrl = profile.getProfilePictureUri(100, 100);
-                email = profile.getLinkUri().toString();
+                //email = profile.getLinkUri().toString();
                 if (photoUrl == null)
                     db.addUser(user_id, personName, email, "");
                 else
@@ -316,6 +334,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.d("abhi", "In OnError" + error.getMessage());
         }
     };
+
+    private Bundle getFacebookData(JSONObject object) {
+
+        try {
+            Bundle bundle = new Bundle();
+            if (object.has("email"))
+                bundle.putString("email", object.getString("email"));
+            if (object.has("gender"))
+                bundle.putString("gender", object.getString("gender"));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     private void updateUIfbLogin() {
         googleLoginButton.setVisibility(View.GONE);

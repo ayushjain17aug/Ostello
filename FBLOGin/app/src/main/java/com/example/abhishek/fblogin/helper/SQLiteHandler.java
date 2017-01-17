@@ -47,8 +47,6 @@ public class SQLiteHandler extends SQLiteOpenHelper {
                 + USER_ID + " INTEGER PRIMARY KEY," + NAME + " TEXT,"
                 + EMAIL + " TEXT UNIQUE," + PHOTO_URL + " TEXT UNIQUE" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
-        //db.execSQL(CREATE_SEARCH_TABLE);
-        createSearchTable(db);
         Log.d(TAG, "Database tables created");
     }
 
@@ -57,7 +55,6 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_LOGIN);
-        db.execSQL("DROP TABLE IF EXISTS " + "search_table");
         // Create tables again
         onCreate(db);
     }
@@ -107,7 +104,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     public User getUser() {
         User user = new User();
-        String selectQuery = "SELECT  * FROM " + TABLE_LOGIN;
+        String selectQuery = "SELECT  * FROM " + TABLE_LOGIN +" ORDER BY "+USER_ID;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -116,8 +113,8 @@ public class SQLiteHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
             user.setUser_id(cursor.getString(0));
             user.setName(cursor.getString(1));
-            user.setEmail(cursor.getString(3));
-            user.setPhotoUrl(cursor.getString(4));
+            user.setEmail(cursor.getString(2));
+            user.setPhotoUrl(cursor.getString(3));
             cursor.close();
         }
         db.close();
@@ -155,42 +152,5 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         db.delete(TABLE_LOGIN, null, null);
         db.close();
         Log.d(TAG, "Deleted all user info from sqlite");
-    }
-
-    public void createSearchTable(SQLiteDatabase db) {
-        Log.d("abhi", "Creating Search Table");
-        ContentValues values = new ContentValues();
-        values.put("name", "Abhishek"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        long id = db.insert("search_table", null, values);
-        values.put("name", "Abhishek"); // Email
-        values.put("address", "Allahabad");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Abhishek Gupta"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Ayush Srivatava"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Abhilesh"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Abhilashi"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Avishek"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
-        values.put("name", "Raj Gupta"); // Email
-        values.put("address", "Lucknow");
-        values.put("phone_no", "9807761948");
-        id = db.insert("search_table", null, values);
     }
 }

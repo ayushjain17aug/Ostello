@@ -1,13 +1,14 @@
 <resources>
-    <string name="app_name">FBLOGin</string>
+    <string name="app_name">Ostello</string>
     <string name="action_settings">Settings</string>
     <string name="app_id">217060265409709</string>
     <string name="title_activity_facebook">FacebookActivity</string>
     <string name="btn_logout_from_google">Logout from Google</string>
-    <string name="btn_revoke_access">Revoke Access</string> 
+    <string name="btn_revoke_access">Revoke Access</string>
     <string name="search_hint">Search for PGs</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_explore_pg">ExplorePGActivity</string>
     <string name="title_activity_searchable">SearchableActivity</string>
+    <string name="title_activity_my_profile">MyProfileActivity</string>
 </resources>
     

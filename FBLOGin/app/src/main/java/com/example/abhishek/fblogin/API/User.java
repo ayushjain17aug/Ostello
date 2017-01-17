@@ -7,14 +7,8 @@ public class User {
 
     private String user_id;
     private String name;
-    private String last_name;
     private String photo_url;
     private String email;
-    private String phone;
-    private int verified;
-    private String college;
-    private String member_since;
-    private int count_event_registered;
 
 
     public User(){}
@@ -45,4 +39,5 @@ public class User {
 
     public String getPhotoUrl(){return photo_url;}
     public void setPhotoUrl(String photo_url){ this.photo_url=photo_url;}
+
 }

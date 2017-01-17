@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.abhishek.fblogin.API.MyProfile;
 import com.example.abhishek.fblogin.API.PG;
 
 import java.util.ArrayList;
@@ -27,6 +28,13 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String PHONE_NO = "phoneNo";
     private String IMAGE_URL = "image_url";
 
+    //MyProfileTableColumn
+    private String TABLE_MY_PROFILE = "my_profile_table";
+    private String NAME = "name";
+    private String AGE = "age";
+    private String USER_ID = "user_id";
+    private String EMAIL = "email";
+    private String GENDER = "gender";
 
     public DataBaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,15 +46,24 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 + HOSTEL_ID + " INTEGER PRIMARY KEY ," + HOSTEL_NAME + " TEXT,"
                 + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT" + ")";
         db.execSQL(CREATE_PG_TABLE);
+
+        String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
+                + USER_ID + " TEXT ," + NAME + " TEXT,"
+                + PHONE_NO + " TEXT," + AGE + " TEXT," + EMAIL + " TEXT," + GENDER + " TEXT" + ")";
+        db.execSQL(CREATE_MY_PROFILE_TABLE);
+
+        Log.d("abhi","created Tables" );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PG);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MY_PROFILE);
+        onCreate(db);
     }
 
     public void addPG(PG pg) {
-        Log.d("abhi","Adding PG");
+        Log.d("abhi", "Adding PG");
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -79,8 +96,46 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return pgList;
     }
 
-    public void deleteAllAttractions() {
+    public void deletePGs() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_PG);
     }
+
+    public void addProfile(MyProfile myProfile) {
+        Log.d("abhi", "Adding Profile"+myProfile.getName()+" "+myProfile.getGender());
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(USER_ID, myProfile.getUser_id());
+        values.put(NAME, myProfile.getName());
+        values.put(PHONE_NO, myProfile.getPhone());
+        values.put(AGE, myProfile.getAge());
+        values.put(EMAIL, myProfile.getEmail());
+        values.put(GENDER, myProfile.getGender());
+        // Inserting Row
+        db.insert(TABLE_MY_PROFILE, null, values);
+        db.close(); // Closing database connection
+    }
+
+    public MyProfile getMyProfile() {
+        String selectQuery = "SELECT  * FROM " + TABLE_MY_PROFILE ;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        MyProfile myProfile = null;
+        if (cursor.moveToFirst()) {
+            do {
+                myProfile = new MyProfile(cursor.getString(0), cursor.getString(1),
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                return myProfile;
+            } while (cursor.moveToNext());
+        }
+
+        return myProfile;
+    }
+    public void deleteMyProfile() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_MY_PROFILE);
+    }
+
 }

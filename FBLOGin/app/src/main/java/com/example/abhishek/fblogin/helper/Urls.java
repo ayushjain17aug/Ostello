@@ -5,5 +5,5 @@ package com.example.abhishek.fblogin.helper;
  */
 public class Urls {
 
-    final static String pgListUrls="http://meabhi.16mb.com/ostello/hostels.php";
+    public final static String pgListUrls="http://meabhi.16mb.com/ostello/hostels.php";
 }

@@ -83,7 +83,7 @@ public class ExplorePGActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             JSONArray jsonArray = jsonResponse.getJSONArray("hostels");
-                            db.deleteAllAttractions();
+                            db.deletePGs();
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 Log.d("abhi","In the for loop");
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
