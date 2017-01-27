@@ -1,0 +1,7 @@
+#Fri Jan 27 16:01:42 IST 2017
+base.0=C\:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_dca3934d89e5e123da68051ada8699a223849ead
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_cf1d677d0da5f9e279a07892e2992dc73544cb07\\classes.dex
+base.1=C\:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_cf1d677d0da5f9e279a07892e2992dc73544cb07
+file.0=C\:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_dca3934d89e5e123da68051ada8699a223849ead\\classes.dex
