@@ -39,6 +39,7 @@ public class SearchableActivity extends AppCompatActivity {
             }
         });
         handleIntent(getIntent());
+        Log.d("abhi","In the on Create() of Searchable Activity()");
     }
 
     /*using "singleTop" launch mode is usually ideal, because chances are good that once a search is done,

@@ -58,7 +58,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.app.default_searchable"
-                android:value=".SearchableActivity" />
+                android:value=".Activity.SearchableActivity" />
         </activity>
         <activity
             android:name=".Activity.MyProfileActivity"

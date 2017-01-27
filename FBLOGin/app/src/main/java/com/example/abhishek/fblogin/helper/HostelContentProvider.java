@@ -78,12 +78,12 @@ public class HostelContentProvider extends ContentProvider {
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        Log.d("abhi", "query is ");
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
         builder.setTables("pg_table");
         switch (mUriMatcher.match(uri)) {
             case SUGGESTIONS:
-                String query = uri.getLastPathSegment();
+                String query = selectionArgs[0];
+                Log.d("abhi", "query is "+query);
                 if (query.equals("")) {
                     return null;
                 }
