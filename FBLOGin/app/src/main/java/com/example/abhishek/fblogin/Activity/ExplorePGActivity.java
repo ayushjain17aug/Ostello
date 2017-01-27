@@ -55,13 +55,9 @@ public class ExplorePGActivity extends AppCompatActivity {
         searchView.setIconifiedByDefault(false);
         searchView.setQueryRefinementEnabled(true);
         searchView.setQueryHint("Type a name to search..");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                //Log.e("onQueryTextChange", "called");
-                return false;
-            }
+       /* searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
 
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -69,7 +65,12 @@ public class ExplorePGActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
                 return true;
             }
-        });
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });*/
         getPgList();
     }
 

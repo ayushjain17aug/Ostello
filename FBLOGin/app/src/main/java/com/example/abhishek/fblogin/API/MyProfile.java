@@ -4,23 +4,25 @@ package com.example.abhishek.fblogin.API;
  * Created by Abhishek on 08-01-2017.
  */
 
-public class MyProfile
-{
+public class MyProfile {
     private String user_id;
     private String name;
     private String age;
     private String email;
     private String phone;
     private String gender;
+    private String image;
 
-    public MyProfile(String user_id,String name, String phone,String age,String email,String gender) {
+    public MyProfile(String user_id, String name, String phone, String age, String email, String gender, String image) {
         this.user_id = user_id;
         this.name = name;
         this.phone = phone;
         this.age = age;
         this.email = email;
         this.gender = gender;
+        this.image = image;
     }
+
     public String getUser_id() {
         return user_id;
     }
@@ -67,5 +69,13 @@ public class MyProfile
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

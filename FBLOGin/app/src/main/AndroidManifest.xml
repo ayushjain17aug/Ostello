@@ -3,7 +3,6 @@
     package="com.example.abhishek.fblogin">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".helper.AppController"
         android:allowBackup="true"
@@ -25,23 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name=".helper.HostelContentProvider"
+            android:authorities="com.example.abhishek.fblogin.helper.HostelContentProvider"/>
         <activity
             android:name=".Activity.SearchableActivity"
             android:label="@string/title_activity_searchable"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
-
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-
-        <provider
-            android:name=".helper.HostelContentProvider"
-            android:authorities="com.example.abhishek.fblogin.helper.HostelContentProvider" />
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -65,5 +62,4 @@
             android:label="@string/title_activity_my_profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-
 </manifest>

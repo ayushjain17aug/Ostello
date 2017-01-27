@@ -26,11 +26,11 @@
     <android.support.v7.widget.SearchView
         android:id="@+id/search_pg"
         android:layout_width="match_parent"
-        android:focusable="false"
         android:layout_height="50dp"
+        android:focusable="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/view2"></android.support.v7.widget.SearchView>
+        android:layout_below="@+id/view2" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pg_recycler_view"
@@ -38,6 +38,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/search_pg"></android.support.v7.widget.RecyclerView>
+        android:layout_below="@+id/search_pg" />
 
 </RelativeLayout>

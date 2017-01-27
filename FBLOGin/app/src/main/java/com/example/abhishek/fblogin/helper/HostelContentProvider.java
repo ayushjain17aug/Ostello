@@ -3,6 +3,7 @@ package com.example.abhishek.fblogin.helper;
 import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
@@ -17,12 +18,24 @@ import java.util.HashMap;
  */
 public class HostelContentProvider extends ContentProvider {
 
-    public static String AUTHORITY = "com.example.abhishek.fblogin";
     private DataBaseHandler handler;
     private SQLiteDatabase db;
 
+    UriMatcher mUriMatcher = buildUriMatcher();
+    private static String AUTHORITY="com.example.abhishek.fblogin.helper.HostelContentProvider";
+    private final int SUGGESTIONS=0;
+
+
+    private UriMatcher buildUriMatcher(){
+        UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+        // Suggestion items of Search Dialog is provided by this uri
+        uriMatcher.addURI(AUTHORITY, SearchManager.SUGGEST_URI_PATH_QUERY,SUGGESTIONS);
+        return uriMatcher;
+    }
+
     @Override
     public boolean onCreate() {
+        Log.d("abhi","in On CREATE");
         handler = new DataBaseHandler(getContext());
         db = handler.getWritableDatabase();
         return true;
@@ -65,13 +78,19 @@ public class HostelContentProvider extends ContentProvider {
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        Log.d("abhi", "query is ");
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
         builder.setTables("pg_table");
-        String query = selectionArgs[0];
-        if(query.equals(""))
-            return null;
-        builder.appendWhere("INSTR(UPPER(name),UPPER('" + query + "'))");
-        builder.setProjectionMap(PROJECTION_MAP);
+        switch (mUriMatcher.match(uri)) {
+            case SUGGESTIONS:
+                String query = uri.getLastPathSegment();
+                if (query.equals("")) {
+                    return null;
+                }
+                builder.appendWhere("INSTR(UPPER(name),UPPER('" + query + "'))");
+                builder.setProjectionMap(PROJECTION_MAP);
+                break;
+        }
     return builder.query(db,projection,null,null,null,null,null);
     }
     }

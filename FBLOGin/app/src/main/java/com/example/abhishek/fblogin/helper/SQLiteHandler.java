@@ -84,16 +84,12 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        //values.put(USER_ID, user.getUser_id());
+        values.put(USER_ID, user.getUser_id());
         values.put(NAME, user.getName());
         //values.put(LAST_NAME, user.getLast_name());
         values.put(EMAIL, user.getEmail());
         values.put(PHOTO_URL, user.getPhotoUrl());
-        //values.put(PHONE, user.getPhone());
-        //values.put(VERIFIED, user.getVerified());
-        //values.put(COLLEGE_NAME, user.getCollege());
-        //values.put(MEMBER_SINCE, user.getMember_since());
-        // updating row
+         // updating row
         db.update(TABLE_LOGIN, values, USER_ID + " = ?",
                 new String[]{String.valueOf(user.getUser_id())});
     }

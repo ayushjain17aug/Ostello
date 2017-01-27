@@ -18,7 +18,7 @@ import android.widget.ImageView;
 /**
  * Created by Abhishek on 22-08-2016.
  */
-public class RoundedImageView extends ImageView {
+public class RoundedImageView extends ImageView{
 
     public RoundedImageView(Context context) {
         super(context);

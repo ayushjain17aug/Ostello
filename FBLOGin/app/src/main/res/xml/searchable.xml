@@ -2,8 +2,11 @@
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
     android:hint="@string/search_hint"
     android:label="@string/app_name"
-    android:searchSuggestAuthority="com.example.abhishek.fblogin.HostelContentProvider"
+    android:searchSuggestAuthority="com.example.abhishek.fblogin.helper.HostelContentProvider"
     android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"
-    android:searchSuggestIntentAction="android.intent.action.SEARCH"
-    android:searchSuggestSelection="INSTR(name,'?'"
-    android:searchMode="queryRewriteFromData" />
+    android:searchSuggestThreshold="1"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:searchSuggestSelection="INSTR(name,'?')"/>
+    <!--android:searchMode="queryRewriteFromData" />-->
+
+

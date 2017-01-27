@@ -55,7 +55,7 @@ public class SearchableActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
 
         Log.d("abhi", "In handle Intent" + intent.getAction() + "  " + Intent.ACTION_SEARCH);
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             doMySearch(query);
         }

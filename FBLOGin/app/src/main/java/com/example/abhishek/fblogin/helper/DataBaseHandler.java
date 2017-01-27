@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class DataBaseHandler extends SQLiteOpenHelper {
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     // Database Name
     private static final String DATABASE_NAME = "LocalDatabase";
     private String TABLE_PG = "pg_table";
@@ -35,6 +35,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String USER_ID = "user_id";
     private String EMAIL = "email";
     private String GENDER = "gender";
+    private String PROFILE_PIC = "profile_pic";
 
     public DataBaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -49,10 +50,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
         String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
                 + USER_ID + " TEXT ," + NAME + " TEXT,"
-                + PHONE_NO + " TEXT," + AGE + " TEXT," + EMAIL + " TEXT," + GENDER + " TEXT" + ")";
+                + PHONE_NO + " TEXT," + AGE + " TEXT," + EMAIL + " TEXT," + GENDER + " TEXT," + PROFILE_PIC + " TEXT" + ")";
         db.execSQL(CREATE_MY_PROFILE_TABLE);
 
-        Log.d("abhi","created Tables" );
+        Log.d("abhi", "created Tables");
     }
 
     @Override
@@ -92,7 +93,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 pgList.add(pg);
             } while (cursor.moveToNext());
         }
-
         return pgList;
     }
 
@@ -102,7 +102,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public void addProfile(MyProfile myProfile) {
-        Log.d("abhi", "Adding Profile"+myProfile.getName()+" "+myProfile.getGender());
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -112,30 +112,33 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(AGE, myProfile.getAge());
         values.put(EMAIL, myProfile.getEmail());
         values.put(GENDER, myProfile.getGender());
+        values.put(PROFILE_PIC, myProfile.getImage());
         // Inserting Row
-        db.insert(TABLE_MY_PROFILE, null, values);
+        long b = db.insertOrThrow(TABLE_MY_PROFILE, null, values);
+        Log.d("abhi", "Row Id :" + b);
         db.close(); // Closing database connection
     }
 
     public MyProfile getMyProfile() {
-        String selectQuery = "SELECT  * FROM " + TABLE_MY_PROFILE ;
-
+        String selectQuery = "SELECT  * FROM " + TABLE_MY_PROFILE;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         MyProfile myProfile = null;
-        if (cursor.moveToFirst()) {
+        Log.d("abhi"," In getMyProfile "+cursor.moveToFirst());
+        if (cursor.moveToFirst()&&cursor!=null) {
             do {
                 myProfile = new MyProfile(cursor.getString(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
+                Log.d("abhi", "Query "+myProfile.getImage());
                 return myProfile;
             } while (cursor.moveToNext());
         }
 
         return myProfile;
     }
+
     public void deleteMyProfile() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_MY_PROFILE);
     }
-
 }
