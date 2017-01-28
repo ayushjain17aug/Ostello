@@ -260,6 +260,10 @@
         "source": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_hostel.xml",
+        "source": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\src\\main\\res\\layout\\activity_hostel.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_activity_layout.xml",
         "source": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\layout\\com_facebook_activity_layout.xml"
     },

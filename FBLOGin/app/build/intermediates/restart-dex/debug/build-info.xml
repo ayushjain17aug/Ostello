@@ -5,9 +5,9 @@
     density="xxxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="14584381197929"
+    timestamp="105369827892576"
     token="8605697519030204810"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
@@ -22,15 +22,23 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+
     <build
-        timestamp="14385630445869"
+        timestamp="104598627006950"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="14584381197929"
-        verifier="COLD_SWAP_REQUESTED" />
+        timestamp="105369827892576"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
 
 </instant-run>

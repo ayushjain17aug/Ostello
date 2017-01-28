@@ -1,5 +1,6 @@
 package com.example.abhishek.fblogin.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -138,12 +139,16 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
 
     @Override
     public void onPageSelected(int position) {
-        for (int i = 0; i < dotsCount; i++) {
-            dots[i].setImageDrawable(getResources().getDrawable(R.drawable.nonselecteditem_dot));
+        Activity activity = getActivity();
+        if(isAdded() && activity!=null)
+        {
+            for (int i = 0; i < dotsCount; i++) {
+                dots[i].setImageDrawable(getResources().getDrawable(R.drawable.nonselecteditem_dot));
+            }
+
+            dots[position].setImageDrawable(getResources().getDrawable(R.drawable.selecteditem_dot));
+
         }
-
-        dots[position].setImageDrawable(getResources().getDrawable(R.drawable.selecteditem_dot));
-
     }
 
     @Override

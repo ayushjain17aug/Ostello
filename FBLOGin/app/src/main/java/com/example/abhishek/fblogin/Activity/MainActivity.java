@@ -17,6 +17,7 @@ import android.view.View;
 
 import com.example.abhishek.fblogin.Fragment.swipe_image;
 import com.example.abhishek.fblogin.R;
+import com.example.abhishek.fblogin.helper.HostelContentProvider;
 import com.example.abhishek.fblogin.helper.SessionManager;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     void explorePGs(View v) {
         Intent i = new Intent(this, ExplorePGActivity.class);
+        startActivity(i);
+    }
+    void PGs(View v) {
+        Intent i = new Intent(this, HostelActivity.class);
         startActivity(i);
     }
 

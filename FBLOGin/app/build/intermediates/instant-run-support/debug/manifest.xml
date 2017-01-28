@@ -71,6 +71,7 @@
             android:name="com.example.abhishek.fblogin.Activity.MyProfileActivity"
             android:label="@string/title_activity_my_profile"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.abhishek.fblogin.Activity.HostelActivity" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"
