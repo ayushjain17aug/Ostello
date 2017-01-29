@@ -34,16 +34,29 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="21dp"
-        android:src="@drawable/mario_black" />
+        android:src="@drawable/mario_black"
+        android:onClick="abhi" />
 
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:onClick="savingProfile"
+        android:text="Save" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/txtinptlyt1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/my_profile_pic"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:paddingEnd="10dp"
         android:paddingLeft="20dp"
@@ -70,12 +83,48 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtinptlyt3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:gravity="center_horizontal"
+        android:paddingEnd="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:textColorHint="@color/black">
+
+        <EditText
+            android:id="@+id/phone_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/email"
+            android:layout_alignStart="@+id/email"
+            android:layout_below="@+id/txtinptlyt1"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:ems="10"
+            android:hint="Contact"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/txtinptlyt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/txtinptlyt1"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="11dp"
         android:gravity="center_horizontal"
         android:paddingEnd="30dp"
         android:paddingLeft="30dp"
@@ -103,9 +152,11 @@
         android:id="@+id/txtinptlyt3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/txtinptlyt2"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="13dp"
         android:gravity="center_horizontal"
         android:paddingEnd="10dp"
         android:paddingLeft="15dp"
@@ -128,60 +179,12 @@
 
     </android.support.design.widget.TextInputLayout>
 
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:onClick="savingProfile"
-        android:text="Save" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtinptlyt3"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:paddingEnd="30dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:textColorHint="@color/black">
-
-        <EditText
-            android:id="@+id/phone_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/email"
-            android:layout_alignStart="@+id/email"
-            android:layout_below="@+id/txtinptlyt1"
-            android:layout_marginTop="28dp"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:ems="10"
-            android:hint="Contact"
-            android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textCursorDrawable="@color/black" />
-
-
-    </android.support.design.widget.TextInputLayout>
-
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:weightSum="1">
 

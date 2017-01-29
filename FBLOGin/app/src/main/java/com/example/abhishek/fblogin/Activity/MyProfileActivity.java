@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
@@ -30,7 +32,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MyProfileActivity extends AppCompatActivity {
-    String gender = null,image=null;
+    String gender = null, image = null;
     private DataBaseHandler db;
     private EditText name, age, phone, email;
     private MyProfile myProfile;
@@ -69,33 +71,34 @@ public class MyProfileActivity extends AppCompatActivity {
             if (myProfile.getGender().toString().equals("Male")) {
                 Male.setChecked(true);
                 Female.setChecked(false);
+                gender="Male";
             } else {
                 Female.setChecked(true);
                 Male.setChecked(false);
+                gender="Female";
             }
-            if(myProfile.getImage()!=null)
+            if (myProfile.getImage() != null)
                 profile_pic.setImageBitmap(decodeBase64(myProfile.getImage()));
         }
 
-        profile_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                            MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-                    // MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE is an
-                    // app-defined int constant that should be quite unique
-                    return;
-                }
-                //Snackbar.make(findViewById(R.id.my_profile_relLayout), "Clicked Image Button Succcessfully!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
-            }
-        });
     }
 
     public void abhi(View v) {
+        if (ContextCompat.checkSelfPermission(MyProfileActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            // if (ActivityCompat.shouldShowRequestPermissionRationale(MyProfileActivity.this,
+            //       Manifest.permission.READ_EXTERNAL_STORAGE))
+            ActivityCompat.requestPermissions(MyProfileActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+            // MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE is an
+            // app-defined int constant that should be quite uni
+        }
         Snackbar.make(findViewById(R.id.my_profile_relLayout), "Clicked Image Button Succcessfully!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+        //Snackbar.make(findViewById(R.id.my_profile_relLayout), "Clicked Image Button Succcessfully!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
     }
 
     @Override
@@ -104,11 +107,11 @@ public class MyProfileActivity extends AppCompatActivity {
         //Detects request codes
         if (requestCode == GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
             Uri selectedImage = data.getData();
-            Log.d("abhi","URI "+selectedImage);
+            Log.d("abhi", "URI " + selectedImage);
             Bitmap bitmap = null;
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
-                image=encodeToBase64(bitmap, Bitmap.CompressFormat.PNG,100);
+                image = encodeToBase64(bitmap, Bitmap.CompressFormat.PNG, 100);
                 profile_pic.setImageBitmap(bitmap);
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
@@ -138,7 +141,7 @@ public class MyProfileActivity extends AppCompatActivity {
     }
 
     public void savingProfile(View view) {
-        Log.d("abhi", "in savingProfile " + gender + " " + name.getText().toString() + " " + email.getText().toString());
+        Log.d("abhi","in saving my profile");
         if (new SessionManager(this).isLoggedIn()) {
             if (!name.getText().toString().equals(null)) {
                 if (!phone.getText().toString().equals(null) && phone.getText().toString().trim().length() == 10) {
@@ -165,21 +168,14 @@ public class MyProfileActivity extends AppCompatActivity {
     }
 
 
-    public static String encodeToBase64(Bitmap image, Bitmap.CompressFormat compressFormat, int quality)
-    {
+    public static String encodeToBase64(Bitmap image, Bitmap.CompressFormat compressFormat, int quality) {
         ByteArrayOutputStream byteArrayOS = new ByteArrayOutputStream();
         image.compress(compressFormat, quality, byteArrayOS);
         return Base64.encodeToString(byteArrayOS.toByteArray(), Base64.DEFAULT);
     }
 
-    public static Bitmap decodeBase64(String input)
-    {
+    public static Bitmap decodeBase64(String input) {
         byte[] decodedBytes = Base64.decode(input, 0);
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
-
-
-
-
-
 }

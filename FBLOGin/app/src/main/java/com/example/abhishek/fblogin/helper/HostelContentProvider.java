@@ -51,19 +51,16 @@ public class HostelContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        Log.d("abhi", "In the insert()");
         return null;
     }
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        Log.d("abhi", "In the delete()");
         return 0;
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        Log.d("abhi", "In the update()");
         return 0;
     }
 

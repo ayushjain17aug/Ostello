@@ -2,9 +2,7 @@ package com.example.abhishek.fblogin.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,7 +15,6 @@ import android.view.View;
 
 import com.example.abhishek.fblogin.Fragment.swipe_image;
 import com.example.abhishek.fblogin.R;
-import com.example.abhishek.fblogin.helper.HostelContentProvider;
 import com.example.abhishek.fblogin.helper.SessionManager;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -54,6 +51,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent i = new Intent(this, HostelActivity.class);
         startActivity(i);
     }
+    void referAndEarn(View v){
+        Intent i = new Intent(this, ReferAndEarnActivity.class);
+        startActivity(i);
+    }
+    void myProfile(View v)
+    {
+        Intent i = new Intent(this, MyProfileActivity.class);
+        startActivity(i);
+    }
 
     void LaunchLoginActivity(View v){
         Intent i=new Intent(this,LoginActivity.class);
@@ -83,8 +89,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_settings) {
             return true;
         }
-        if(id==R.id.my_profile)
-            startActivity(new Intent(this,MyProfileActivity.class));
         return super.onOptionsItemSelected(item);
     }
 

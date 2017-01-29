@@ -64,13 +64,17 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.app.default_searchable"
-                android:value=".SearchableActivity" />
+                android:value=".Activity.SearchableActivity" />
         </activity>
         <activity
             android:name="com.example.abhishek.fblogin.Activity.MyProfileActivity"
             android:label="@string/title_activity_my_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.abhishek.fblogin.Activity.HostelActivity" />
+        <activity
+            android:name="com.example.abhishek.fblogin.Activity.ReferAndEarnActivity"
+            android:label="@string/title_activity_refer_and_earn"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"

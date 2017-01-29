@@ -112,7 +112,7 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#f5aa15</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_button_background_color">#415dae</color>
@@ -486,6 +486,7 @@
     <string name="title_activity_facebook">FacebookActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_my_profile">MyProfileActivity</string>
+    <string name="title_activity_refer_and_earn">ReferAndEarnActivity</string>
     <string name="title_activity_searchable">SearchableActivity</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

@@ -105,8 +105,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         // Move to first row
-        if (cursor != null) {
-            cursor.moveToFirst();
+        if (cursor.moveToFirst()) {
             user.setUser_id(cursor.getString(0));
             user.setName(cursor.getString(1));
             user.setEmail(cursor.getString(2));

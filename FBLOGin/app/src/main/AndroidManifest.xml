@@ -64,7 +64,11 @@
             android:name=".Activity.MyProfileActivity"
             android:label="@string/title_activity_my_profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.HostelActivity"></activity>
+        <activity android:name=".Activity.HostelActivity" />
+        <activity
+            android:name=".Activity.ReferAndEarnActivity"
+            android:label="@string/title_activity_refer_and_earn"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

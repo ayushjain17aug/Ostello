@@ -47,7 +47,8 @@
             android:text="My Profile"
             android:layout_width="127dp"
             android:layout_height="65dp"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:onClick="myProfile"/>
 
         <Button
             android:text="Login"
@@ -80,6 +81,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/button5"
         android:onClick="PGs" />
+
+    <Button
+        android:text="Refer And Earn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="referAndEarn"
+        android:id="@+id/button6" />
 
 
 </LinearLayout>

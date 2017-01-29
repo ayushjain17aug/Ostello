@@ -12,5 +12,6 @@
     <string name="title_activity_explore_pg">ExplorePGActivity</string>
     <string name="title_activity_searchable">SearchableActivity</string>
     <string name="title_activity_my_profile">MyProfileActivity</string>
+    <string name="title_activity_refer_and_earn">ReferAndEarnActivity</string>
 </resources>
     
