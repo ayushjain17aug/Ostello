@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\xml\\searchablelocation.xml",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\xml\\searchablelocation.xml"
     }
 ]

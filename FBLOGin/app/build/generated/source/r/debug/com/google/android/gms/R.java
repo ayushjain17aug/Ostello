@@ -66,11 +66,11 @@ public final class R {
 		public static final int light = 0x7f0d0046;
 		public static final int none = 0x7f0d0012;
 		public static final int normal = 0x7f0d0014;
-		public static final int progressBar = 0x7f0d00be;
+		public static final int progressBar = 0x7f0d00d5;
 		public static final int radio = 0x7f0d006e;
 		public static final int standard = 0x7f0d0042;
-		public static final int text = 0x7f0d00d2;
-		public static final int text2 = 0x7f0d00d0;
+		public static final int text = 0x7f0d00e9;
+		public static final int text2 = 0x7f0d00e7;
 		public static final int toolbar = 0x7f0d0085;
 		public static final int wide = 0x7f0d0043;
 		public static final int wrap_content = 0x7f0d0021;

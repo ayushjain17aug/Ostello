@@ -1,4 +1,4 @@
-#Sun Jan 29 18:59:25 IST 2017
+#Mon Jan 30 23:37:17 IST 2017
 base.0=C\:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_471144a67550035ff23f1d49ff69d4f7ba22be65
 renamed.1=classes2.dex
 renamed.0=classes.dex

@@ -36,6 +36,9 @@
         <provider
             android:name="com.example.abhishek.fblogin.helper.HostelContentProvider"
             android:authorities="com.example.abhishek.fblogin.helper.HostelContentProvider" />
+        <provider
+            android:name="com.example.abhishek.fblogin.helper.LocationContentProvider"
+            android:authorities="com.example.abhishek.fblogin.helper.LocationContentProvider" />
 
         <activity
             android:name="com.example.abhishek.fblogin.Activity.SearchableActivity"
@@ -76,6 +79,19 @@
             android:name="com.example.abhishek.fblogin.Activity.ReferAndEarnActivity"
             android:label="@string/title_activity_refer_and_earn"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.abhishek.fblogin.Activity.PostRequirements"
+            android:label="@string/title_activity_post_requirements"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchablelocation" />
+        </activity>
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
             android:excludeFromRecents="true"

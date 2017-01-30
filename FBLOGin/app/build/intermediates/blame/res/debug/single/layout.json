@@ -52,6 +52,10 @@
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\layout\\activity_my_profile.xml"
     },
     {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_post_requirements.xml",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\layout\\activity_post_requirements.xml"
+    },
+    {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },

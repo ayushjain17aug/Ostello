@@ -1,6 +1,8 @@
 package com.example.abhishek.fblogin.Activity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -15,6 +17,7 @@ import android.view.View;
 
 import com.example.abhishek.fblogin.Fragment.swipe_image;
 import com.example.abhishek.fblogin.R;
+import com.example.abhishek.fblogin.helper.AppController;
 import com.example.abhishek.fblogin.helper.SessionManager;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,7 +63,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent i = new Intent(this, MyProfileActivity.class);
         startActivity(i);
     }
-
+    void postReq(View v){
+        Intent i = new Intent(this, PostRequirements.class);
+        startActivity(i);
+    }
     void LaunchLoginActivity(View v){
         Intent i=new Intent(this,LoginActivity.class);
         //if(!session.isLoggedIn()) {
@@ -88,6 +94,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        if (id == R.id.rate_us)
+        {
+            Uri uri = Uri.parse("market://details?id=" + AppController.getInstance().getPackageName());
+            Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+            // To count with Play market backstack, After pressing back button,
+            // to taken back to our application, we need to add following flags to intent.
+            goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                    Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                    Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+            try {
+                startActivity(goToMarket);
+            } catch (ActivityNotFoundException e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://play.google.com/store/apps/details?id=" + AppController.getInstance().getPackageName())));
+            }
         }
         return super.onOptionsItemSelected(item);
     }
