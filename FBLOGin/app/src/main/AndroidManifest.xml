@@ -75,8 +75,8 @@
         <activity
             android:name=".Activity.PostRequirements"
             android:label="@string/title_activity_post_requirements"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -85,5 +85,4 @@
                 android:resource="@xml/searchablelocation" />
         </activity>
     </application>
-
 </manifest>

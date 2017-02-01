@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:2:1-89:12
+ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:2:1-88:12
 	package
 		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:3:5-43
 		INJECTED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml
@@ -158,9 +158,9 @@ ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifes
 	android:label
 		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:77:13-69
 	android:launchMode
-		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:79:13-43
+		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:78:13-43
 	android:theme
-		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:78:13-56
+		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:79:13-56
 	android:name
 		ADDED from C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\src\main\AndroidManifest.xml:76:13-54
 uses-sdk
