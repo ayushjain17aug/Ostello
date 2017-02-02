@@ -192,11 +192,19 @@
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\10.0.1\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_heart.png",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\drawable\\red_heart.png"
+    },
+    {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\nonselecteditem_dot.xml",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\drawable\\nonselecteditem_dot.xml"
     },
     {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\heart_outline.png",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\src\\main\\res\\drawable\\heart_outline.png"
     }
 ]

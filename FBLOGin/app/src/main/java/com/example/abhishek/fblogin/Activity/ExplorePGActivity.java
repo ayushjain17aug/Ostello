@@ -15,12 +15,12 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.abhishek.fblogin.API.PG;
+import com.example.abhishek.fblogin.Adapter.pgListAdapter;
+import com.example.abhishek.fblogin.R;
 import com.example.abhishek.fblogin.helper.AppController;
 import com.example.abhishek.fblogin.helper.DataBaseHandler;
-import com.example.abhishek.fblogin.API.PG;
-import com.example.abhishek.fblogin.R;
 import com.example.abhishek.fblogin.helper.Urls;
-import com.example.abhishek.fblogin.Adapter.pgListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,10 +43,10 @@ public class ExplorePGActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         db = new DataBaseHandler(getApplicationContext());
-        pgList=db.getAllPGs();
+        pgList = db.getAllPGs();
         pgRecyclerView = (RecyclerView) findViewById(R.id.pg_recycler_view);
         pgRecyclerView.setLayoutManager(new LinearLayoutManager(pgRecyclerView.getContext()));
-        pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList);
+        pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
         pgRecyclerView.setAdapter(adapter);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) findViewById(R.id.search_pg);
@@ -56,9 +56,7 @@ public class ExplorePGActivity extends AppCompatActivity {
         searchView.setQueryRefinementEnabled(true);
         searchView.setQueryHint("Type a name to search..");
 
-       searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Snackbar.make(findViewById(R.id.explorePg_relLayout), "No match found for " + query, Snackbar.LENGTH_LONG)
@@ -86,19 +84,19 @@ public class ExplorePGActivity extends AppCompatActivity {
                             JSONArray jsonArray = jsonResponse.getJSONArray("hostels");
                             db.deletePGs();
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                Log.d("abhi","In the for loop");
+                                Log.d("abhi", "In the for loop");
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                PG pg = new PG(jsonObject.getInt("id"),jsonObject.getString("hostel_name"),jsonObject.getString("address"), jsonObject.getString("image_url"),jsonObject.getString("phone_no"));
+                                PG pg = new PG(jsonObject.getInt("id"), jsonObject.getString("hostel_name"), jsonObject.getString("address"), jsonObject.getString("image_url"), jsonObject.getString("phone_no"));
                                 db.addPG(pg);
                             }
-                            pgList=db.getAllPGs();
-                            pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList);
+                            pgList = db.getAllPGs();
+                            pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
                             pgRecyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.d("abhi","Json Exception");
-                            pgList=db.getAllPGs();
-                            pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList);
+                            Log.d("abhi", "Json Exception");
+                            pgList = db.getAllPGs();
+                            pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
                             pgRecyclerView.setAdapter(adapter);
                         }
                     }
@@ -108,8 +106,8 @@ public class ExplorePGActivity extends AppCompatActivity {
                 Log.d("abhi", "Volley Error " + error.getMessage());
                 Snackbar.make(findViewById(R.id.explorePg_relLayout), "Please check your connection!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                pgList=db.getAllPGs();
-                pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList);
+                pgList = db.getAllPGs();
+                pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
                 pgRecyclerView.setAdapter(adapter);
             }
         });

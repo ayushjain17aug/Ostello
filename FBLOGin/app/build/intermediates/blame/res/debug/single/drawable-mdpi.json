@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\drawable-mdpi\\com_facebook_profile_picture_blank_portrait.png"
     },
     {
-        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\com_facebook_button_send_icon.png",
-        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\drawable-mdpi\\com_facebook_button_send_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_slideshow.png",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_menu_slideshow.png"
+    },
+    {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\com_facebook_button_send_icon.png",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\drawable-mdpi\\com_facebook_button_send_icon.png"
     },
     {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\com_facebook_tooltip_blue_topnub.png",

@@ -1,7 +1,5 @@
 package com.example.abhishek.fblogin.API;
 
-import android.util.Log;
-
 /**
  * Created by Abhishek on 28-12-2016.
  */
@@ -13,14 +11,12 @@ public class PG {
     private String phoneNo;
     private String image_url;
 
-    public PG(int id,String name, String address,String image_url,String phoneNo) {
-
-        Log.d("abhi","Object created"+name);
+    public PG(int id, String name, String address, String image_url, String phoneNo) {
         this.name = name;
         this.image_url = image_url;
-        this.address=address;
-        this.id=id;
-        this.phoneNo=phoneNo;
+        this.address = address;
+        this.id = id;
+        this.phoneNo = phoneNo;
     }
 
     public String getImage_url() {
@@ -62,4 +58,5 @@ public class PG {
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
+
 }
