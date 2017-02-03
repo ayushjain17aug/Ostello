@@ -37,6 +37,19 @@
                     android:layout_centerHorizontal="true"
                     android:visibility="gone"/>
 
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/heart_outline"
+                    android:layout_below="@+id/progressBar"
+                    android:layout_alignParentRight="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:onClick="favButtonClicked"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/favButton1" />
+
             </RelativeLayout>
 
             <TextView

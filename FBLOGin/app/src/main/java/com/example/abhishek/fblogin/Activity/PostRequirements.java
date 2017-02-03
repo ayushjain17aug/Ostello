@@ -30,6 +30,7 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
     private String gender;
     private String sharing;
     private String budget;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
         setSupportActionBar(toolbar);
         location = (TextView) findViewById(R.id.location);
         searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) findViewById(R.id.search_location);
+        searchView = (SearchView) findViewById(R.id.search_location);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setSubmitButtonEnabled(true);
         searchView.setIconifiedByDefault(false);
@@ -54,7 +55,6 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cities);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         citySpinner.setAdapter(dataAdapter);
-
 
         searchView.setQueryHint("Type a location to search..");
 
@@ -73,7 +73,6 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
         });
         handleIntent(getIntent());
     }
-
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -114,6 +113,7 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
                 break;
         }
     }
+
     public void SharingSelect(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -137,6 +137,7 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
                 break;
         }
     }
+
     public void BudgetSelect(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -163,12 +164,11 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onBackPressed() {
-        Intent i=new Intent(this,MainActivity.class);
         finish();
-        startActivity(i);
+        super.onBackPressed();
     }
 
-    public void submit(View view){
+    public void submit(View view) {
 
     }
 }

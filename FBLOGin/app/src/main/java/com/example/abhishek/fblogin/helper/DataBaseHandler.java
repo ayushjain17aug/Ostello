@@ -37,6 +37,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String GENDER = "gender";
     private String PROFILE_PIC = "profile_pic";
 
+    private String TABLE_FAV_PG = "fav_pg";
+
     public DataBaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -45,7 +47,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_PG_TABLE = "CREATE TABLE " + TABLE_PG + "("
                 + HOSTEL_ID + " INTEGER PRIMARY KEY ," + HOSTEL_NAME + " TEXT,"
-                + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT" + ")";
+                + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT"+ ")";
         db.execSQL(CREATE_PG_TABLE);
 
         String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
@@ -53,13 +55,16 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 + PHONE_NO + " TEXT," + AGE + " TEXT," + EMAIL + " TEXT," + GENDER + " TEXT," + PROFILE_PIC + " TEXT" + ")";
         db.execSQL(CREATE_MY_PROFILE_TABLE);
 
-        Log.d("abhi", "created Tables");
+        String CREATE_FAV_PG_TABLE = "CREATE TABLE " + TABLE_FAV_PG + "("
+                + HOSTEL_ID + " INTEGER ," + HOSTEL_NAME + " TEXT" + ")";
+            db.execSQL(CREATE_FAV_PG_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PG);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_MY_PROFILE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAV_PG);
         onCreate(db);
     }
 
@@ -73,10 +78,42 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(ADDRESS, pg.getAddress());
         values.put(IMAGE_URL, pg.getImage_url());
         values.put(PHONE_NO, pg.getPhoneNo());
+
         // Inserting Row
         db.insert(TABLE_PG, null, values);
         db.close(); // Closing database connection
         Log.e("PG:", "stored in db.");
+    }
+
+    public void addFavPg(int id, String name) {
+        Log.d("abhi","inserting"+name+" "+id);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(HOSTEL_ID, id);
+        values.put(HOSTEL_NAME, name);
+        db.insert(TABLE_FAV_PG, null, values);
+        db.close();
+    }
+
+    public ArrayList<Integer> getFavPGs() {
+        ArrayList<Integer> pgFavList = new ArrayList<Integer>();
+        String selectQuery = "SELECT  * FROM " + TABLE_FAV_PG + " ORDER BY " + HOSTEL_ID;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                pgFavList.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        //Log.d("abhi","In the getFavPGs"+pgFavList.size());
+        return pgFavList;
+    }
+
+    public void deleteFavPg(int id) {
+       // Log.d("abhi","deleting"+" "+id);
+        SQLiteDatabase db = this.getWritableDatabase();
+        String delete = "DELETE FROM " + TABLE_FAV_PG + " WHERE "+HOSTEL_ID+" = '"+id+"'";
+        db.execSQL(delete);
     }
 
     public ArrayList<PG> getAllPGs() {
@@ -129,7 +166,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(PROFILE_PIC, myProfile.getImage());
         // Inserting Row
         long b = db.insertOrThrow(TABLE_MY_PROFILE, null, values);
-        Log.d("abhi", "Row Id :" + b);
+        //Log.d("abhi", "Row Id :" + b);
         db.close(); // Closing database connection
     }
 
@@ -138,12 +175,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         MyProfile myProfile = null;
-        Log.d("abhi"," In getMyProfile "+cursor.moveToFirst());
-        if (cursor.moveToFirst()&&cursor!=null) {
+        //Log.d("abhi", " In getMyProfile " + cursor.moveToFirst());
+        if (cursor.moveToFirst() && cursor != null) {
             do {
                 myProfile = new MyProfile(cursor.getString(0), cursor.getString(1),
                         cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
-                Log.d("abhi", "Query "+myProfile.getImage());
+                Log.d("abhi", "Query " + myProfile.getImage());
                 return myProfile;
             } while (cursor.moveToNext());
         }

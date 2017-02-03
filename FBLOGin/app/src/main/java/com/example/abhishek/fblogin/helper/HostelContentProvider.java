@@ -35,7 +35,6 @@ public class HostelContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        Log.d("abhi","in On CREATE");
         handler = new DataBaseHandler(getContext());
         db = handler.getWritableDatabase();
         return true;
