@@ -16,5 +16,8 @@
     <string name="title_activity_my_profile">MyProfileActivity</string>
     <string name="title_activity_refer_and_earn">ReferAndEarnActivity</string>
     <string name="title_activity_post_requirements">PostRequirements</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
     

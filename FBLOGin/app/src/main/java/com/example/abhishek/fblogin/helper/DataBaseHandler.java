@@ -96,6 +96,20 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return pgList;
     }
 
+    public PG getPG(String Hostel_ID)
+    {
+        String selectQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + HOSTEL_ID + " = " + Hostel_ID;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor  cursor = db.rawQuery(selectQuery,null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        PG pg = new PG(cursor.getInt(0), cursor.getString(1),
+                cursor.getString(2), cursor.getString(3), cursor.getString(4));
+        return pg;
+    }
+
     public void deletePGs() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_PG);

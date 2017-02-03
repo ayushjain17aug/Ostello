@@ -34,7 +34,7 @@
             android:authorities="com.example.abhishek.fblogin.helper.LocationContentProvider" />
 
         <activity
-            android:name=".Activity.SearchableActivity"
+            android:name=".Activity.HostelActivity"
             android:label="@string/title_activity_searchable"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -61,13 +61,12 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.app.default_searchable"
-                android:value=".Activity.SearchableActivity" />
+                android:value=".Activity.HostelActivity" />
         </activity>
         <activity
             android:name=".Activity.MyProfileActivity"
             android:label="@string/title_activity_my_profile"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.HostelActivity" />
         <activity
             android:name=".Activity.ReferAndEarnActivity"
             android:label="@string/title_activity_refer_and_earn"

@@ -1,51 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
+    abi="arm64-v8a,armeabi,armeabi-v7a"
     api-level="23"
-    density="xhdpi"
+    density="xxxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="1303823871634254"
-    token="-4831945423393230769"
-    verifier="COLD_SWAP_REQUESTED" >
+    timestamp="141641239581918"
+    token="8605697519030204810"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="4090" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="88" />
+        duration="0" />
     <task
         name="verifier"
-        duration="4" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
+        location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="1303281343631410"
+        timestamp="141641239581918"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="1303646058968110"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="1303823871634254"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

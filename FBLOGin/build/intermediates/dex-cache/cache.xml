@@ -3,201 +3,201 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_45621733cb7fe34616449db8e506b28a49537b73\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_3be9dea082d5cd6b7f85314a7a1b406142689818\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-beta4\constraint-layout-solver-1.0.0-beta4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="0a9cb567dc008f570c28531720168f19148da965">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.0-beta4_5b3bc46760c98613c76f4bb906b397278e07849c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-android-1.2.0_58895f4e0c9cf33bec75564c744b6fa25c5e22e5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_9e3c25c37e4f3b2583e835f8fca841be7fbdc090\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_7db75f5179b8673eb068f1dc268fe476d233636a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_6e7e47e448c4ec652bbf2f5e1961bef4a19eca14\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_0d4bce86888227cf673e052f63cf4368cc7ac209\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_35ddc8d4f03d752c6dc4895b9e08822a6465a1f3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_2bc98d3f67c60c4441f210470150b483fc2403d6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_070788e737ee7b3690f5b9a6ab94cf8aeb91e91f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5126103e9c9cbb4a2629916435869d68e50d71c5">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_471144a67550035ff23f1d49ff69d4f7ba22be65\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_137c37db74e7c361681e14850cc54e17ca665bd5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="15ad6a46fb8e2ed86556e0b330d738b589dc62c7">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.5.0_fa91ae330082a2a905e9c5ce7f9eca3b62d83931\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_d88f5d8ee8508e9898360f2e7f2e83275ec63f2e\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_ced8e8bb95eb807390cb7113ef1b27e4b303b30a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_a3a8246dcffae369c0e756ec1a2d4d0ad904e015\classes.dex" />
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_e63de4576e992c6fce748d7682b1d8fc30ac9542\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jar="C:\Users\User\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-beta4\constraint-layout-solver-1.0.0-beta4.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_1d1ce7f2ddfc1a99a5391e7890c60faa2e51f568\classes.dex" />
+        sha1="0a9cb567dc008f570c28531720168f19148da965">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.0-beta4_9c65e5ab80a79a7bc1689722e51ee1ad6714c257\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-1.0.19_85d4b97db488ab3b1df5c066264aef2ea30c1452\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-1.0.19_5ed2a83243312881a60016050e76c52fddb91b45\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="43d05cb4047936d3e44b0dfac7b8c00031fe90df">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8f1a34574b098777d1597498ad1b5d9c7c0db530\classes.dex" />
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-android-1.2.0_78f2e36cf0a064584f67ca87abc874093383e35d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_b3cc037810b7a963a67e32eb5bd385b044458489\classes.dex" />
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_25abc8df85dc55ae89fc510e202304efbf23bd8b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_3da2fbfe9c8a2b1cfd80fe1753671f80500ab393\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.0-beta4\jars\classes.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.0-beta4\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="662d7533b25a666c649c10a16b42edfb95f25a4f">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support.constraint-constraint-layout-1.0.0-beta4_6f29500a185ff58fe16a0d31039450c87fce9acd\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support.constraint-constraint-layout-1.0.0-beta4_8e62770b2891a24a95fc96a113d742c1d980986a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_81aa40292751dd579d12963a52040fd28b846797\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="15ad6a46fb8e2ed86556e0b330d738b589dc62c7">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.5.0_b85ca881318b495acebab72e6cebb2496cd169c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_a681509a5e740b3fdf622370c67f09d8976b8dd5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_5517ad6280003113cfbbcce0219439484b450e70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6aac32aff6246182807ab07c3a73ec77429d1c8d">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_dca3934d89e5e123da68051ada8699a223849ead\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_fca97c3ac0d77d86d4045372d51ed888743804ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_ca5c804eb67c0315e30d7b210d9de9fba6a13568\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_abfacc7afe7c651699cf85d9b7de00c1a86e38f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_97eb587e8326dd700f5c6b8ad93a2bd358d52be1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_7dcbe52c59edb39b066a874ea043c4444462f2b0\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_2d1f595f5f0b8df879da1cafa6269a513580eb53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1bd02cba7822be4f6bea7c291e2f16f5f9271957">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_cf1d677d0da5f9e279a07892e2992dc73544cb07\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_f5a04774f6af5129f42e08be67ef43e84aa05a61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_badcc59626c8bf60fbd570ba883ac0f8d5c9be7a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_398e1cac607c650a1901bb811009da8423ddd0c2\classes.dex" />
     </item>
 
 </items>

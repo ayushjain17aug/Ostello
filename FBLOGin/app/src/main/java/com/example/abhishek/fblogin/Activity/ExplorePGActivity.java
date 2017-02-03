@@ -1,5 +1,4 @@
 package com.example.abhishek.fblogin.Activity;
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -21,11 +19,9 @@ import com.example.abhishek.fblogin.API.PG;
 import com.example.abhishek.fblogin.R;
 import com.example.abhishek.fblogin.helper.Urls;
 import com.example.abhishek.fblogin.Adapter.pgListAdapter;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 
