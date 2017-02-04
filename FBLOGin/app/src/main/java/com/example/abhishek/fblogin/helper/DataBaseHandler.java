@@ -24,10 +24,11 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String TABLE_PG = "pg_table";
     private String HOSTEL_ID = "_id";
     private String ADDRESS = "address";
+    private String TYPE = "type";
     private String HOSTEL_NAME = "name";
     private String PHONE_NO = "phoneNo";
     private String IMAGE_URL = "image_url";
-
+    private String SHARING = "sharing";
     //MyProfileTableColumn
     private String TABLE_MY_PROFILE = "my_profile_table";
     private String NAME = "name";
@@ -47,7 +48,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_PG_TABLE = "CREATE TABLE " + TABLE_PG + "("
                 + HOSTEL_ID + " INTEGER PRIMARY KEY ," + HOSTEL_NAME + " TEXT,"
-                + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT"+ ")";
+                + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT" + ")";
         db.execSQL(CREATE_PG_TABLE);
 
         String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
@@ -57,7 +58,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
         String CREATE_FAV_PG_TABLE = "CREATE TABLE " + TABLE_FAV_PG + "("
                 + HOSTEL_ID + " INTEGER ," + HOSTEL_NAME + " TEXT" + ")";
-            db.execSQL(CREATE_FAV_PG_TABLE);
+        db.execSQL(CREATE_FAV_PG_TABLE);
     }
 
     @Override
@@ -86,7 +87,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public void addFavPg(int id, String name) {
-        Log.d("abhi","inserting"+name+" "+id);
+        Log.d("abhi", "inserting" + name + " " + id);
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(HOSTEL_ID, id);
@@ -110,16 +111,15 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public void deleteFavPg(int id) {
-       // Log.d("abhi","deleting"+" "+id);
+        // Log.d("abhi","deleting"+" "+id);
         SQLiteDatabase db = this.getWritableDatabase();
-        String delete = "DELETE FROM " + TABLE_FAV_PG + " WHERE "+HOSTEL_ID+" = '"+id+"'";
+        String delete = "DELETE FROM " + TABLE_FAV_PG + " WHERE " + HOSTEL_ID + " = '" + id + "'";
         db.execSQL(delete);
     }
 
     public ArrayList<PG> getAllPGs() {
         ArrayList<PG> pgList = new ArrayList<PG>();
         String selectQuery = "SELECT  * FROM " + TABLE_PG + " ORDER BY " + HOSTEL_ID;
-
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -177,5 +177,48 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public void deleteMyProfile() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_MY_PROFILE);
+    }
+
+    public ArrayList<PG> getGenderBasedHostel(String gender) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + TYPE + " = '" + gender + "'";
+        ArrayList<PG> pgList = new ArrayList<PG>();
+        Cursor cursor = db.rawQuery(getPgQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                PG pg = new PG(cursor.getInt(0), cursor.getString(1),
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                pgList.add(pg);
+            } while (cursor.moveToNext());
+        }
+        return pgList;
+    }
+    public ArrayList<PG> getSharingBasedHostel(String sharing) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + SHARING + " = '" + sharing + "'";
+        ArrayList<PG> pgList = new ArrayList<PG>();
+        Cursor cursor = db.rawQuery(getPgQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                PG pg = new PG(cursor.getInt(0), cursor.getString(1),
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                pgList.add(pg);
+            } while (cursor.moveToNext());
+        }
+        return pgList;
+    }
+    public ArrayList<PG> getGenderAndSharingBasedHostel(String gender,String sharing) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + TYPE + " = '" + gender + "' AND " + SHARING + " = '" + sharing + "'";
+        ArrayList<PG> pgList = new ArrayList<PG>();
+        Cursor cursor = db.rawQuery(getPgQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                PG pg = new PG(cursor.getInt(0), cursor.getString(1),
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                pgList.add(pg);
+            } while (cursor.moveToNext());
+        }
+        return pgList;
     }
 }

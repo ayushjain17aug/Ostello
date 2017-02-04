@@ -2,14 +2,20 @@ package com.example.abhishek.fblogin.Activity;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -34,6 +40,9 @@ public class ExplorePGActivity extends AppCompatActivity {
     private DataBaseHandler db;
     RecyclerView pgRecyclerView;
     private static ArrayList<PG> pgList;
+    private String sharing = null;
+    private String gender = null;
+    private pgListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +55,7 @@ public class ExplorePGActivity extends AppCompatActivity {
         pgList = db.getAllPGs();
         pgRecyclerView = (RecyclerView) findViewById(R.id.pg_recycler_view);
         pgRecyclerView.setLayoutManager(new LinearLayoutManager(pgRecyclerView.getContext()));
-        pgListAdapter adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
+        adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
         pgRecyclerView.setAdapter(adapter);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) findViewById(R.id.search_pg);
@@ -73,7 +82,6 @@ public class ExplorePGActivity extends AppCompatActivity {
     }
 
     private void getPgList() {
-        Log.d("abhi", "In the get pg");
         StringRequest strReq = new StringRequest(Request.Method.GET, Urls.pgListUrls,
                 new Response.Listener<String>() {
                     @Override
@@ -112,5 +120,116 @@ public class ExplorePGActivity extends AppCompatActivity {
             }
         });
         AppController.getInstance().addToRequestQueue(strReq, "req_hostelList");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.explore_pg, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.filter) {
+            Log.d("abhi", "adding filter");
+            addFilter();
+        }
+        return true;
+    }
+
+    private void addFilter() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Filter");
+        final View view = getLayoutInflater().inflate(R.layout.filter_pop_up, null);
+        setButtons(view, gender, sharing);
+        builder.setView(view);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pgType(view);
+                SharingSelect(view);
+                ArrayList<PG> pgList1 = new ArrayList<PG>();
+                if (gender == null && sharing != null)
+                    pgList1 = db.getSharingBasedHostel(sharing);
+                else if (gender != null && sharing == null)
+                    pgList1 = db.getGenderBasedHostel(gender);
+                else if (gender != null && sharing != null)
+                    pgList1 = db.getGenderAndSharingBasedHostel(gender, sharing);
+                if (pgList1 != null) {
+                    adapter = new pgListAdapter(ExplorePGActivity.this, pgList1, db.getFavPGs());
+                    pgRecyclerView.setAdapter(adapter);
+                }
+                Log.d("abhi", gender + " " + sharing);
+            }
+        });
+        builder.setNeutralButton("Clear Filter", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                gender = null;
+                sharing = null;
+                pgList = db.getAllPGs();
+                adapter = new pgListAdapter(ExplorePGActivity.this, pgList, db.getFavPGs());
+                pgRecyclerView.setAdapter(adapter);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    private void setButtons(View view, String gender, String sharing) {
+        final RadioButton female = (RadioButton) view.findViewById(R.id.female);
+        final RadioButton male = (RadioButton) view.findViewById(R.id.male);
+        final RadioButton sharingAny = (RadioButton) view.findViewById(R.id.Any);
+        final RadioButton sharingOne = (RadioButton) view.findViewById(R.id.sharing1);
+        final RadioButton sharingTwo = (RadioButton) view.findViewById(R.id.sharing2);
+        final RadioButton sharingThreePlus = (RadioButton) view.findViewById(R.id.sharing21);
+        if (gender.equals("male"))
+            male.setChecked(true);
+        else if (gender.equals("female"))
+            female.setChecked(true);
+        if (sharing.equals("Any"))
+            sharingAny.setChecked(true);
+        else if (sharing.equals("1"))
+            sharingOne.setChecked(true);
+        else if (sharing.equals("2"))
+            sharingTwo.setChecked(true);
+        else if (sharing.equals("3+"))
+            sharingThreePlus.setChecked(true);
+    }
+
+    public void pgType(View view) {
+        final RadioButton female = (RadioButton) view.findViewById(R.id.female);
+        final RadioButton male = (RadioButton) view.findViewById(R.id.male);
+        if (female.isChecked())
+            gender = "female";
+        else if (male.isChecked())
+            gender = "male";
+    }
+
+    public void SharingSelect(View view) {
+        final RadioButton sharingAny = (RadioButton) view.findViewById(R.id.Any);
+        final RadioButton sharingOne = (RadioButton) view.findViewById(R.id.sharing1);
+        final RadioButton sharingTwo = (RadioButton) view.findViewById(R.id.sharing2);
+        final RadioButton sharingThreePlus = (RadioButton) view.findViewById(R.id.sharing21);
+        if (sharingAny.isChecked())
+            sharing = "Any";
+        else if (sharingOne.isChecked())
+            sharing = "1";
+        else if (sharingTwo.isChecked())
+            sharing = "2";
+        else if (sharingThreePlus.isChecked())
+            sharing = "3+";
     }
 }

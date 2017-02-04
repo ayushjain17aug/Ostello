@@ -76,15 +76,15 @@ public final class R {
 		public static final int com_facebook_tooltip_blue_bottomnub = 0x7f02005a;
 		public static final int com_facebook_tooltip_blue_topnub = 0x7f02005b;
 		public static final int com_facebook_tooltip_blue_xout = 0x7f02005c;
-		public static final int messenger_bubble_large_blue = 0x7f02007f;
-		public static final int messenger_bubble_large_white = 0x7f020080;
-		public static final int messenger_bubble_small_blue = 0x7f020081;
-		public static final int messenger_bubble_small_white = 0x7f020082;
-		public static final int messenger_button_blue_bg_round = 0x7f020083;
-		public static final int messenger_button_blue_bg_selector = 0x7f020084;
-		public static final int messenger_button_send_round_shadow = 0x7f020085;
-		public static final int messenger_button_white_bg_round = 0x7f020086;
-		public static final int messenger_button_white_bg_selector = 0x7f020087;
+		public static final int messenger_bubble_large_blue = 0x7f020080;
+		public static final int messenger_bubble_large_white = 0x7f020081;
+		public static final int messenger_bubble_small_blue = 0x7f020082;
+		public static final int messenger_bubble_small_white = 0x7f020083;
+		public static final int messenger_button_blue_bg_round = 0x7f020084;
+		public static final int messenger_button_blue_bg_selector = 0x7f020085;
+		public static final int messenger_button_send_round_shadow = 0x7f020086;
+		public static final int messenger_button_white_bg_round = 0x7f020087;
+		public static final int messenger_button_white_bg_selector = 0x7f020088;
 	}
 	public static final class id {
 		public static final int automatic = 0x7f0d004f;
@@ -118,12 +118,12 @@ public final class R {
 		public static final int com_facebook_activity_layout = 0x7f040022;
 		public static final int com_facebook_login_fragment = 0x7f040023;
 		public static final int com_facebook_tooltip_bubble = 0x7f040024;
-		public static final int messenger_button_send_blue_large = 0x7f040035;
-		public static final int messenger_button_send_blue_round = 0x7f040036;
-		public static final int messenger_button_send_blue_small = 0x7f040037;
-		public static final int messenger_button_send_white_large = 0x7f040038;
-		public static final int messenger_button_send_white_round = 0x7f040039;
-		public static final int messenger_button_send_white_small = 0x7f04003a;
+		public static final int messenger_button_send_blue_large = 0x7f040036;
+		public static final int messenger_button_send_blue_round = 0x7f040037;
+		public static final int messenger_button_send_blue_small = 0x7f040038;
+		public static final int messenger_button_send_white_large = 0x7f040039;
+		public static final int messenger_button_send_white_round = 0x7f04003a;
+		public static final int messenger_button_send_white_small = 0x7f04003b;
 	}
 	public static final class string {
 		public static final int com_facebook_image_download_unknown_error = 0x7f070013;

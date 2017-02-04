@@ -133,7 +133,7 @@ public class PostRequirements extends AppCompatActivity implements AdapterView.O
                 break;
             case R.id.sharing21:
                 if (checked)
-                    sharing = "2+";
+                    sharing = "3+";
                 break;
         }
     }
