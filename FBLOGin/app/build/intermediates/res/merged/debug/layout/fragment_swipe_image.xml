@@ -5,49 +5,60 @@ android:layout_height="match_parent"
 android:fitsSystemWindows="true"
 tools:context="com.example.abhishek.fblogin.Fragment.swipe_image">
 
-<android.support.v4.view.ViewPager
-    android:id="@+id/viewpager"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:listitem="@layout/pager_item"
-     />
-
-<RelativeLayout
-    android:id="@+id/viewPagerIndicator"
-    android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:layout_alignParentBottom="true"
-    android:layout_marginTop="5dp"
-    android:gravity="center">
-
-    <LinearLayout
-        android:id="@+id/viewPagerCountDots"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="horizontal" />
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:listitem="@layout/pager_item"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:id="@+id/viewPagerCountDots"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal" />
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="center">
+           <ImageButton
+               android:id="@+id/btn_previous"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="#00FF0000"
+               android:contentDescription="Let's start"
+               android:src="@drawable/ic_chevron_left_black_24dp"
+               android:layout_marginLeft="15dp"
+               android:layout_gravity="center"
+               android:layout_marginStart="15dp"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true" />
 
-    <ImageButton
-        android:id="@+id/btn_next"
-        android:layout_width="42dip"
-        android:layout_height="42dip"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="15dip"
-        android:src="@drawable/ic_arrow_forward_black_24dp" />
+           <ImageButton
+               android:id="@+id/btn_next"
+               android:layout_width="42dip"
+               android:layout_height="42dip"
+               android:background="#00FF0000"
+               android:layout_gravity="center"
+               android:src="@drawable/ic_chevron_right_black_24dp"
+               android:layout_marginRight="15dp"
+               android:layout_marginEnd="15dp"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentRight="true"
+               android:layout_alignParentEnd="true" />
+       </RelativeLayout>
 
-    <ImageButton
-        android:id="@+id/btn_finish"
-        android:layout_width="42dip"
-        android:layout_height="42dip"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="15dip"
-        android:background="@drawable/ic_menu_send"
-        android:contentDescription="Let's start"
-        android:src="@mipmap/ic_launcher"
-        android:visibility="gone" />
-
-</RelativeLayout>
+    </FrameLayout>
 
 </RelativeLayout>

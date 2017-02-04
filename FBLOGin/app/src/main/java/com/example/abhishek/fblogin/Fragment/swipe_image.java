@@ -35,7 +35,7 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
     private int dotsCount;
     private ImageView[] dots;
     private swipe_pager_Adapter mAdapter;
-    private ImageButton btnNext, btnFinish;
+    private ImageButton btnNext, btnPrevious;
     int currentPage = 0;
 
     private int[] mImageResources = {
@@ -60,12 +60,12 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
         pager_indicator = (LinearLayout) view.findViewById(R.id.viewPagerCountDots);
 
         btnNext = (ImageButton) view.findViewById(R.id.btn_next);
-        btnFinish = (ImageButton) view.findViewById(R.id.btn_finish);
+        btnPrevious = (ImageButton) view.findViewById(R.id.btn_previous);
 
          mAdapter = new swipe_pager_Adapter(getActivity(), mImageResources);
 
         btnNext.setOnClickListener(this);
-        btnFinish.setOnClickListener(this);
+        btnPrevious.setOnClickListener(this);
 
         intro_images.setAdapter(mAdapter);
         intro_images.setCurrentItem(0);
@@ -77,7 +77,7 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
-                if (currentPage == 6-1) {
+                if (currentPage == 5) {
                     currentPage = 0;
                 }
                 intro_images.setCurrentItem(currentPage++, true);
@@ -91,7 +91,7 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
             public void run() {
                 handler.post(Update);
             }
-        }, 500, 3000);
+        }, 500, 2000);
         return view;
     }
     private void setUiPageViewController() {
@@ -114,6 +114,7 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
         }
 
         dots[0].setImageDrawable(getResources().getDrawable(R.drawable.selecteditem_dot));
+        btnPrevious.setVisibility(View.INVISIBLE);
     }
 
     public void onButtonPressed(Uri uri) {
@@ -142,11 +143,22 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
         Activity activity = getActivity();
         if(isAdded() && activity!=null)
         {
+
+            btnNext.setVisibility(View.VISIBLE);
+            btnPrevious.setVisibility(View.INVISIBLE);
             for (int i = 0; i < dotsCount; i++) {
                 dots[i].setImageDrawable(getResources().getDrawable(R.drawable.nonselecteditem_dot));
             }
 
             dots[position].setImageDrawable(getResources().getDrawable(R.drawable.selecteditem_dot));
+            if(position==4)
+            {
+                btnNext.setVisibility(View.INVISIBLE);
+            }
+            if(position!=0)
+            {
+                btnPrevious.setVisibility(View.VISIBLE);
+            }
 
         }
     }
@@ -162,9 +174,9 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
                         ? intro_images.getCurrentItem() + 1 : 0);
                 break;
 
-            case R.id.btn_finish:
-                intro_images.setCurrentItem((intro_images.getCurrentItem() < dotsCount)
-                        ? intro_images.getCurrentItem() + 1 : 0);
+            case R.id.btn_previous:
+                intro_images.setCurrentItem((intro_images.getCurrentItem() > 0)
+                        ? intro_images.getCurrentItem() - 1 : 0);
                 break;
         }
     }

@@ -61,7 +61,7 @@ public final class R {
 		public static final int button = 0x7f0d004d;
 		public static final int center = 0x7f0d0025;
 		public static final int dark = 0x7f0d0045;
-		public static final int email = 0x7f0d009b;
+		public static final int email = 0x7f0d009c;
 		public static final int icon_only = 0x7f0d0041;
 		public static final int light = 0x7f0d0046;
 		public static final int none = 0x7f0d0012;
@@ -69,8 +69,8 @@ public final class R {
 		public static final int progressBar = 0x7f0d00d5;
 		public static final int radio = 0x7f0d006e;
 		public static final int standard = 0x7f0d0042;
-		public static final int text = 0x7f0d00ea;
-		public static final int text2 = 0x7f0d00e8;
+		public static final int text = 0x7f0d00e8;
+		public static final int text2 = 0x7f0d00e6;
 		public static final int toolbar = 0x7f0d0085;
 		public static final int wide = 0x7f0d0043;
 		public static final int wrap_content = 0x7f0d0021;

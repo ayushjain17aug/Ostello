@@ -30,22 +30,9 @@ public class SearchableActivity extends AppCompatActivity {
         Result = (TextView) findViewById(R.id.result);
         handler = new SQLiteHandler(getApplicationContext());
         db = handler.getWritableDatabase();
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         handleIntent(getIntent());
         Log.d("abhi","In the on Create() of Searchable Activity()");
     }
-
-    /*using "singleTop" launch mode is usually ideal, because chances are good that once a search is done,
-         the user will perform additional searches and it's a bad experience if your application creates
-         multiple instances of the searchable activity.
-        So, we recommend that you set your searchable activity to "singleTop" launch mode in the application manifest*/
     @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
@@ -63,24 +50,9 @@ public class SearchableActivity extends AppCompatActivity {
     }
 
     private void doMySearch(String query) {
-
-        Log.d("abhi", "In do my Search" + query);
-       /* String columns[] = {"_id", "name", "address","phone_no"};
-        //Cursor cursor=db.query("search_table",columns,"name"+" LIKE '"+query+"'",null,null,null,null);
-        Cursor cursor=db.query("search_table",columns,"INSTR(name,'"+query+"')",null,null,null,null);
-
-        while(cursor.moveToNext()==true){
-            s=s+cursor.getInt(0)+""+cursor.getString(1)+" "+cursor.getString(2)+" "+cursor.getString(3)+"\n";
-        }*/
         String s;
         s = "" + getIntent().getData().toString();
         Result.setText(s);
-        /*if (cursor==null)
-            return null;
-        else if(!cursor.moveToFirst()){
-            cursor.close();
-            return null;
-        }*/
     }
 
 }
