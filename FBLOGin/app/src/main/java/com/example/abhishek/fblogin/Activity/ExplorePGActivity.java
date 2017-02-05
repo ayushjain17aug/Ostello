@@ -84,7 +84,12 @@ public class ExplorePGActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 Log.d("abhi", "In the for loop");
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                PG pg = new PG(jsonObject.getInt("id"), jsonObject.getString("hostel_name"), jsonObject.getString("address"), jsonObject.getString("image_url"), jsonObject.getString("phone_no"));
+                                PG pg = new PG(jsonObject.getInt("id"), jsonObject.getString("hostel_name"), jsonObject.getString("image_url1"),
+                                        jsonObject.getString("image_url2"), jsonObject.getString("image_url3"),jsonObject.getString("image_url14"),
+                                        jsonObject.getString("image_url5"), jsonObject.getString("rental1"), jsonObject.getString("rental2")
+                                        , jsonObject.getString("rental3"), jsonObject.getString("address"),
+                                        jsonObject.getString("phone_no"), jsonObject.getString("amenties"), jsonObject.getString("cancellation_policy")
+                                        , jsonObject.getString("hostel_rule"), jsonObject.getString("gender"), jsonObject.getString("sharing"));
                                 db.addPG(pg);
                             }
                             pgList = db.getAllPGs();

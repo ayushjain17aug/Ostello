@@ -24,10 +24,10 @@ public class PG {
     private String sharing;
 
 
-    public PG(int id, String name, String address, String image_url1, String image_url2, String image_url3,
-              String image_url4,String image_url5,String rental1,String rental2,String rental3
+    public PG(int id, String name, String image_url1, String image_url2, String image_url3,
+              String image_url4,String image_url5,String rental1,String rental2,String rental3, String address, String phoneNo
             ,String amenties,String cancellation_policy,String hostel_rule,String gender
-            ,String sharing, String phoneNo) {
+            ,String sharing) {
         this.name = name;
         this.image_url1 = image_url1;
         this.image_url2 = image_url2;
