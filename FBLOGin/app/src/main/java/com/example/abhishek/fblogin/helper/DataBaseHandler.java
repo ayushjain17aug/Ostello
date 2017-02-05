@@ -26,7 +26,20 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String ADDRESS = "address";
     private String HOSTEL_NAME = "name";
     private String PHONE_NO = "phoneNo";
-    private String IMAGE_URL = "image_url";
+    private String IMAGE_URL1 = "image_url1";
+    private String IMAGE_URL2 = "image_url2";
+    private String IMAGE_URL3 = "image_url3";
+    private String IMAGE_URL4 = "image_url4";
+    private String IMAGE_URL5 = "image_url5";
+    private String RENTAL1 = "rental1";
+    private String RENTAL2 = "rental2";
+    private String RENTAL3 = "rental3";
+    private String AMENTIES = "amenties";
+    private String CANCELLATION_POLICY = "cancellation_policy";
+    private String HOSTEL_RULE = "hostel_rule";
+    private String GENDER_HOSTEL = "gender";
+    private String SHARING = "sharing";
+
 
     //MyProfileTableColumn
     private String TABLE_MY_PROFILE = "my_profile_table";
@@ -47,7 +60,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_PG_TABLE = "CREATE TABLE " + TABLE_PG + "("
                 + HOSTEL_ID + " INTEGER PRIMARY KEY ," + HOSTEL_NAME + " TEXT,"
-                + ADDRESS + " TEXT," + IMAGE_URL + " TEXT," + PHONE_NO + " TEXT"+ ")";
+                + ADDRESS + " TEXT," + IMAGE_URL1 + " TEXT," + IMAGE_URL2 + " TEXT," + IMAGE_URL3
+                +" TEXT," + IMAGE_URL4 + " TEXT," + IMAGE_URL5 + " TEXT," + RENTAL1 + " TEXT,"
+                + RENTAL2 + " TEXT," + RENTAL3 + " TEXT," + AMENTIES + " TEXT," + CANCELLATION_POLICY + " TEXT,"
+                + HOSTEL_RULE + " TEXT," + GENDER_HOSTEL + " TEXT,"+ SHARING + " TEXT,"+ PHONE_NO + " TEXT"+ ")";
         db.execSQL(CREATE_PG_TABLE);
 
         String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
@@ -76,7 +92,19 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(HOSTEL_ID, pg.getId());
         values.put(HOSTEL_NAME, pg.getName());
         values.put(ADDRESS, pg.getAddress());
-        values.put(IMAGE_URL, pg.getImage_url());
+        values.put(IMAGE_URL1, pg.getImage_url1());
+        values.put(IMAGE_URL2, pg.getImage_url2());
+        values.put(IMAGE_URL3, pg.getImage_url3());
+        values.put(IMAGE_URL4, pg.getImage_url4());
+        values.put(IMAGE_URL5, pg.getImage_url5());
+        values.put(RENTAL1, pg.getRental1());
+        values.put(RENTAL2, pg.getRental2());
+        values.put(RENTAL3, pg.getRental3());
+        values.put(AMENTIES, pg.getAmenties());
+        values.put(CANCELLATION_POLICY, pg.getCancellation_policy());
+        values.put(HOSTEL_RULE, pg.getHostel_rule());
+        values.put(GENDER_HOSTEL, pg.getGender());
+        values.put(SHARING, pg.getSharing());
         values.put(PHONE_NO, pg.getPhoneNo());
 
         // Inserting Row
@@ -126,7 +154,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                        cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+                        cursor.getString(11), cursor.getString(12), cursor.getString(13),cursor.getString(14),cursor.getString(15),
+                        cursor.getString(16));
                 pgList.add(pg);
             } while (cursor.moveToNext());
         }
@@ -143,7 +174,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
         }
         PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-                cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+            cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+            cursor.getString(11), cursor.getString(12), cursor.getString(13),cursor.getString(14),cursor.getString(15),
+            cursor.getString(16));
         return pg;
     }
 
