@@ -24,7 +24,7 @@ public class HostelActivity extends AppCompatActivity {
         DataBaseHandler db = new DataBaseHandler(getApplicationContext());
         pg = db.getPG(hostelId);
         db.close();
-        result.setText(pg.getImage_url());
+        result.setText(pg.getImage_url1());
 
 
     }
