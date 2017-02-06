@@ -2,6 +2,7 @@ package com.example.abhishek.fblogin.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class pgListAdapter extends RecyclerView.Adapter<pgListAdapter.MyViewHold
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final PG pg = hostelList.get(position);
         App.showProgressBar(holder.progressBar);
-        Picasso.with(context).load(pg.getImage_url()).into(holder.img, new com.squareup.picasso.Callback() {
+        Picasso.with(context).load(pg.getImage_url2()).into(holder.img, new com.squareup.picasso.Callback() {
 
             @Override
             public void onSuccess() {
@@ -51,6 +52,7 @@ public class pgListAdapter extends RecyclerView.Adapter<pgListAdapter.MyViewHold
 
             @Override
             public void onError() {
+                Log.d("abhi", "Error in image loading");
                 App.hideProgressBar(holder.progressBar);
             }
         });
@@ -58,7 +60,7 @@ public class pgListAdapter extends RecyclerView.Adapter<pgListAdapter.MyViewHold
             holder.favButton.setImageResource(R.drawable.red_heart);
         else
             holder.favButton.setImageResource(R.drawable.heart_outline);
-        holder.txt.setText(pg.getName());
+        holder.txt.setText(pg.getName() + "," + pg.getAddress());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +94,10 @@ public class pgListAdapter extends RecyclerView.Adapter<pgListAdapter.MyViewHold
         return hostelList.size();
     }
 
+    public interface ClickListener {
+        void itemClicked(View view, int position);
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         public final View mView;
@@ -108,9 +114,5 @@ public class pgListAdapter extends RecyclerView.Adapter<pgListAdapter.MyViewHold
             progressBar = (ProgressBar) itemView.findViewById(R.id.progressBar);
             favButton = (ImageButton) itemView.findViewById(R.id.favButton1);
         }
-    }
-
-    public interface ClickListener {
-        void itemClicked(View view, int position);
     }
 }

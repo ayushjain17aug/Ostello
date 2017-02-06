@@ -10,6 +10,7 @@
     <string name="btn_revoke_access">Revoke Access</string>
     <string name="search_hint">Search for PGs</string>
     <string name="search_hint_location">Location</string>
+    <string name="hello_blank_fragment">Hello Blank Fragment</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_explore_pg">ExplorePGActivity</string>
     <string name="title_activity_searchable">SearchableActivity</string>

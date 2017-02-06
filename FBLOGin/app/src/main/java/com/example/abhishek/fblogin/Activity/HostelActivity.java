@@ -1,7 +1,7 @@
 package com.example.abhishek.fblogin.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.abhishek.fblogin.API.PG;
@@ -20,7 +20,7 @@ public class HostelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hostel);
         hostelId = getIntent().getData().toString();
-        result=(TextView)findViewById(R.id.result);
+        result = (TextView) findViewById(R.id.result);
         DataBaseHandler db = new DataBaseHandler(getApplicationContext());
         pg = db.getPG(hostelId);
         db.close();

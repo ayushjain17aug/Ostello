@@ -18,13 +18,21 @@ import java.util.HashMap;
  */
 public class HostelContentProvider extends ContentProvider {
 
+    private static final HashMap<String, String> PROJECTION_MAP = new HashMap<String, String>();
+    private static String AUTHORITY="com.example.abhishek.fblogin.helper.HostelContentProvider";
+
+    static {
+        PROJECTION_MAP.put("_id", "_id");
+        PROJECTION_MAP.put(SearchManager.SUGGEST_COLUMN_TEXT_1,
+                "name AS " + SearchManager.SUGGEST_COLUMN_TEXT_1);
+        PROJECTION_MAP.put(SearchManager.SUGGEST_COLUMN_TEXT_2, "address AS " + SearchManager.SUGGEST_COLUMN_TEXT_2);
+        PROJECTION_MAP.put(SearchManager.SUGGEST_COLUMN_INTENT_DATA, "_id AS " + SearchManager.SUGGEST_COLUMN_INTENT_DATA);
+    }
+
+    private final int SUGGESTIONS = 0;
+    UriMatcher mUriMatcher = buildUriMatcher();
     private DataBaseHandler handler;
     private SQLiteDatabase db;
-
-    UriMatcher mUriMatcher = buildUriMatcher();
-    private static String AUTHORITY="com.example.abhishek.fblogin.helper.HostelContentProvider";
-    private final int SUGGESTIONS=0;
-
 
     private UriMatcher buildUriMatcher(){
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
@@ -63,15 +71,6 @@ public class HostelContentProvider extends ContentProvider {
         return 0;
     }
 
-    private static final HashMap<String, String> PROJECTION_MAP = new HashMap<String, String>();
-
-    static {
-        PROJECTION_MAP.put("_id", "_id");
-        PROJECTION_MAP.put(SearchManager.SUGGEST_COLUMN_TEXT_1,
-                "name AS " + SearchManager.SUGGEST_COLUMN_TEXT_1);
-        PROJECTION_MAP.put(SearchManager.SUGGEST_COLUMN_INTENT_DATA,"_id AS "+SearchManager.SUGGEST_COLUMN_INTENT_DATA);
-    }
-
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
@@ -83,7 +82,7 @@ public class HostelContentProvider extends ContentProvider {
                 if (query.equals("")) {
                     return null;
                 }
-                builder.appendWhere("INSTR(UPPER(name),UPPER('" + query + "'))");
+                builder.appendWhere("INSTR(UPPER(name),UPPER('" + query + "')) OR INSTR(UPPER(address),UPPER('" + query + "'))");
                 builder.setProjectionMap(PROJECTION_MAP);
                 break;
         }

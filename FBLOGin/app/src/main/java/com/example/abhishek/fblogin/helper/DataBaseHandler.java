@@ -27,7 +27,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private String TYPE = "type";
     private String HOSTEL_NAME = "name";
     private String PHONE_NO = "phoneNo";
-    private String SHARING = "sharing";
     private String IMAGE_URL1 = "image_url1";
     private String IMAGE_URL2 = "image_url2";
     private String IMAGE_URL3 = "image_url3";
@@ -63,9 +62,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         String CREATE_PG_TABLE = "CREATE TABLE " + TABLE_PG + "("
                 + HOSTEL_ID + " INTEGER PRIMARY KEY ," + HOSTEL_NAME + " TEXT,"
                 + ADDRESS + " TEXT," + IMAGE_URL1 + " TEXT," + IMAGE_URL2 + " TEXT," + IMAGE_URL3
-                +" TEXT," + IMAGE_URL4 + " TEXT," + IMAGE_URL5 + " TEXT," + RENTAL1 + " TEXT,"
+                + " TEXT," + IMAGE_URL4 + " TEXT," + IMAGE_URL5 + " TEXT," + RENTAL1 + " TEXT,"
                 + RENTAL2 + " TEXT," + RENTAL3 + " TEXT," + AMENTIES + " TEXT," + CANCELLATION_POLICY + " TEXT,"
-                + HOSTEL_RULE + " TEXT," + GENDER_HOSTEL + " TEXT,"+ SHARING + " TEXT,"+ PHONE_NO + " TEXT"+ ")";
+                + HOSTEL_RULE + " TEXT," + GENDER_HOSTEL + " TEXT," + SHARING + " TEXT," + PHONE_NO + " TEXT" + ")";
         db.execSQL(CREATE_PG_TABLE);
 
         String CREATE_MY_PROFILE_TABLE = "CREATE TABLE " + TABLE_MY_PROFILE + "("
@@ -140,7 +139,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     public void deleteFavPg(int id) {
-       // Log.d("abhi","deleting"+" "+id);
+        // Log.d("abhi","deleting"+" "+id);
         SQLiteDatabase db = this.getWritableDatabase();
         String delete = "DELETE FROM " + TABLE_FAV_PG + " WHERE " + HOSTEL_ID + " = '" + id + "'";
         db.execSQL(delete);
@@ -156,9 +155,15 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 PG pg = new PG(cursor.getInt(0), cursor.getString(1),
+
                         cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
                         cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
-                        cursor.getString(11), cursor.getString(12), cursor.getString(13),cursor.getString(14),cursor.getString(15),
+                        cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15),
+                        cursor.getString(16));
+                Log.d("abhi", "" + cursor.getInt(0) + cursor.getString(1) +
+                        cursor.getString(2) + cursor.getString(3) + cursor.getString(4) + cursor.getString(5) + cursor.getString(6) +
+                        cursor.getString(7) + cursor.getString(8) + cursor.getString(9) + cursor.getString(10) +
+                        cursor.getString(11) + cursor.getString(12) + cursor.getString(13) + cursor.getString(14) + cursor.getString(15) +
                         cursor.getString(16));
                 pgList.add(pg);
             } while (cursor.moveToNext());
@@ -166,20 +171,19 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return pgList;
     }
 
-    public PG getPG(String Hostel_ID)
-    {
+    public PG getPG(String Hostel_ID) {
         String selectQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + HOSTEL_ID + " = " + Hostel_ID;
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor  cursor = db.rawQuery(selectQuery,null);
+        Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-            cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
-            cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
-            cursor.getString(11), cursor.getString(12), cursor.getString(13),cursor.getString(14),cursor.getString(15),
-            cursor.getString(16));
+                cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+                cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15),
+                cursor.getString(16));
         return pg;
     }
 
@@ -231,18 +235,22 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     public ArrayList<PG> getGenderBasedHostel(String gender) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + TYPE + " = '" + gender + "'";
+        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + GENDER + " = '" + gender + "'";
         ArrayList<PG> pgList = new ArrayList<PG>();
         Cursor cursor = db.rawQuery(getPgQuery, null);
         if (cursor.moveToFirst()) {
             do {
                 PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                        cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+                        cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15),
+                        cursor.getString(16));
                 pgList.add(pg);
             } while (cursor.moveToNext());
         }
         return pgList;
     }
+
     public ArrayList<PG> getSharingBasedHostel(String sharing) {
         SQLiteDatabase db = this.getWritableDatabase();
         String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + SHARING + " = '" + sharing + "'";
@@ -251,21 +259,28 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                        cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+                        cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15),
+                        cursor.getString(16));
                 pgList.add(pg);
             } while (cursor.moveToNext());
         }
         return pgList;
     }
-    public ArrayList<PG> getGenderAndSharingBasedHostel(String gender,String sharing) {
+
+    public ArrayList<PG> getGenderAndSharingBasedHostel(String gender, String sharing) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + TYPE + " = '" + gender + "' AND " + SHARING + " = '" + sharing + "'";
+        String getPgQuery = "SELECT  * FROM " + TABLE_PG + " WHERE " + GENDER + " = '" + gender + "' AND " + SHARING + " = '" + sharing + "'";
         ArrayList<PG> pgList = new ArrayList<PG>();
         Cursor cursor = db.rawQuery(getPgQuery, null);
         if (cursor.moveToFirst()) {
             do {
                 PG pg = new PG(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3), cursor.getString(4));
+                        cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                        cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getString(10),
+                        cursor.getString(11), cursor.getString(12), cursor.getString(13), cursor.getString(14), cursor.getString(15),
+                        cursor.getString(16));
                 pgList.add(pg);
             } while (cursor.moveToNext());
         }

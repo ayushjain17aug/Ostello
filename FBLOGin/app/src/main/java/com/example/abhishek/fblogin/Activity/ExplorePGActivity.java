@@ -37,9 +37,9 @@ import java.util.ArrayList;
 
 public class ExplorePGActivity extends AppCompatActivity {
 
-    private DataBaseHandler db;
-    RecyclerView pgRecyclerView;
     private static ArrayList<PG> pgList;
+    RecyclerView pgRecyclerView;
+    private DataBaseHandler db;
     private String sharing = null;
     private String gender = null;
     private pgListAdapter adapter;
@@ -94,12 +94,12 @@ public class ExplorePGActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 Log.d("abhi", "In the for loop");
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                PG pg = new PG(jsonObject.getInt("id"), jsonObject.getString("hostel_name"), jsonObject.getString("image_url1"),
-                                        jsonObject.getString("image_url2"), jsonObject.getString("image_url3"),jsonObject.getString("image_url14"),
+                                PG pg = new PG(jsonObject.getInt("id"), jsonObject.getString("hostel_name"), jsonObject.getString("address"), jsonObject.getString("image_url1"),
+                                        jsonObject.getString("image_url2"), jsonObject.getString("image_url3"), jsonObject.getString("image_url4"),
                                         jsonObject.getString("image_url5"), jsonObject.getString("rental1"), jsonObject.getString("rental2")
-                                        , jsonObject.getString("rental3"), jsonObject.getString("address"),
-                                        jsonObject.getString("phone_no"), jsonObject.getString("amenties"), jsonObject.getString("cancellation_policy")
-                                        , jsonObject.getString("hostel_rule"), jsonObject.getString("gender"), jsonObject.getString("sharing"));
+                                        , jsonObject.getString("rental3"),
+                                        jsonObject.getString("amenties"), jsonObject.getString("cancellation_policy")
+                                        , jsonObject.getString("hostel_rule"), jsonObject.getString("gender"), jsonObject.getString("sharing"), jsonObject.getString("phone_no"));
                                 db.addPG(pg);
                             }
                             pgList = db.getAllPGs();
@@ -171,7 +171,6 @@ public class ExplorePGActivity extends AppCompatActivity {
                     adapter = new pgListAdapter(ExplorePGActivity.this, pgList1, db.getFavPGs());
                     pgRecyclerView.setAdapter(adapter);
                 }
-                Log.d("abhi", gender + " " + sharing);
             }
         });
         builder.setNeutralButton("Clear Filter", new DialogInterface.OnClickListener() {
@@ -200,17 +199,17 @@ public class ExplorePGActivity extends AppCompatActivity {
         final RadioButton sharingOne = (RadioButton) view.findViewById(R.id.sharing1);
         final RadioButton sharingTwo = (RadioButton) view.findViewById(R.id.sharing2);
         final RadioButton sharingThreePlus = (RadioButton) view.findViewById(R.id.sharing21);
-        if (gender.equals("male"))
+        if (gender != null && gender.equals("male"))
             male.setChecked(true);
-        else if (gender.equals("female"))
+        else if (gender != null && gender.equals("female"))
             female.setChecked(true);
-        if (sharing.equals("Any"))
+        if (sharing != null && sharing.equals("Any"))
             sharingAny.setChecked(true);
-        else if (sharing.equals("1"))
+        else if (sharing != null && sharing.equals("1"))
             sharingOne.setChecked(true);
-        else if (sharing.equals("2"))
+        else if (sharing != null && sharing.equals("2"))
             sharingTwo.setChecked(true);
-        else if (sharing.equals("3+"))
+        else if (sharing != null && sharing.equals("3"))
             sharingThreePlus.setChecked(true);
     }
 
@@ -235,6 +234,6 @@ public class ExplorePGActivity extends AppCompatActivity {
         else if (sharingTwo.isChecked())
             sharing = "2";
         else if (sharingThreePlus.isChecked())
-            sharing = "3+";
+            sharing = "3";
     }
 }

@@ -24,10 +24,11 @@ public class PG {
     private String sharing;
 
 
-    public PG(int id, String name, String image_url1, String image_url2, String image_url3,
-              String image_url4,String image_url5,String rental1,String rental2,String rental3, String address, String phoneNo
-            ,String amenties,String cancellation_policy,String hostel_rule,String gender
-            ,String sharing) {
+    public PG(int id, String name, String address, String image_url1, String image_url2, String image_url3,
+              String image_url4, String image_url5, String rental1, String rental2, String rental3, String amenties, String cancellation_policy
+            , String hostel_rule, String gender
+            , String sharing, String phoneNo) {
+
         this.name = name;
         this.image_url1 = image_url1;
         this.image_url2 = image_url2;
@@ -43,6 +44,8 @@ public class PG {
         this.gender = gender;
         this.id = id;
         this.phoneNo = phoneNo;
+        this.sharing = sharing;
+        this.address = address;
     }
 
     public String getImage_url1() {
@@ -52,88 +55,100 @@ public class PG {
         this.image_url1 = image_url1;
     }
 
+    public String getImage_url2() {
+        return image_url2;
+    }
+
     public void setImage_url2(String image_url2) {
         this.image_url2 = image_url2;
     }
-    public String getImage_url2() {
-        return image_url2;
+
+    public String getImage_url3() {
+        return image_url3;
     }
 
     public void setImage_url3(String image_url3) {
         this.image_url3 = image_url3;
     }
-    public String getImage_url3() {
-        return image_url3;
+
+    public String getImage_url4() {
+        return image_url4;
     }
 
     public void setImage_url4(String image_url4) {
         this.image_url4 = image_url4;
     }
-    public String getImage_url4() {
-        return image_url4;
+
+    public String getImage_url5() {
+        return image_url5;
     }
 
     public void setImage_url5(String image_url5) {
         this.image_url5 = image_url5;
     }
-    public String getImage_url5() {
-        return image_url5;
+
+    public String getRental1() {
+        return rental1;
     }
 
     public void setRental1(String rental1) {
         this.rental1 = rental1;
     }
-    public String getRental1() {
-        return rental1;
+
+    public String getRental2() {
+        return rental2;
     }
 
     public void setRental2(String rental2) {
         this.rental2 = rental2;
     }
-    public String getRental2() {
-        return rental2;
+
+    public String getRental3() {
+        return rental3;
     }
 
     public void setRental3(String rental3) {
         this.rental3 = rental3;
     }
-    public String getRental3() {
-        return rental3;
+
+    public String getAmenties() {
+        return amenties;
     }
 
     public void setAmenties(String amenties) {
         this.amenties = amenties;
     }
-    public String getAmenties() {
-        return amenties;
+
+    public String getCancellation_policy() {
+        return cancellation_policy;
     }
 
     public void setCancellation_policy(String cancellation_policy) {
         this.cancellation_policy = cancellation_policy;
     }
-    public String getCancellation_policy() {
-        return cancellation_policy;
+
+    public String getHostel_rule() {
+        return hostel_rule;
     }
 
     public void setHostel_rule(String hostel_rule) {
         this.hostel_rule = hostel_rule;
     }
-    public String getHostel_rule() {
-        return hostel_rule;
+
+    public String getSharing() {
+        return sharing;
     }
 
     public void setSharing(String sharing) {
         this.hostel_rule = sharing;
     }
-    public String getSharing() {
-        return sharing;
+
+    public String getGender() {
+        return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-    public String getGender() {
-        return gender;
     }
 
     public String getName() {

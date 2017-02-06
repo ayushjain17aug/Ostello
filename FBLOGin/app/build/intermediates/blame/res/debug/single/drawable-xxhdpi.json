@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_menu_share.png"
     },
     {
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_chevron_right_black_24dp.png",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_chevron_right_black_24dp.png"
+    },
+    {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\messenger_button_send_round_shadow.png",
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\drawable-xxhdpi\\messenger_button_send_round_shadow.png"
     },
@@ -32,8 +36,8 @@
         "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.5.0\\res\\drawable-xxhdpi\\com_facebook_button_like_icon_selected.png"
     },
     {
-        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_arrow_forward_black_24dp.png",
-        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_arrow_forward_black_24dp.png"
+        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_chevron_left_black_24dp.png",
+        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_chevron_left_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\messenger_bubble_small_blue.png",
