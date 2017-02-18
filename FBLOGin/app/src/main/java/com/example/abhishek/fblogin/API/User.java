@@ -9,17 +9,19 @@ public class User {
     private String name;
     private String photo_url;
     private String email;
+    private String type;
 
 
     public User(){}
 
-    public User(String user_id,String name, String email,
-                String photo_url){
+    public User(String user_id, String name, String email,
+                String photo_url, String type) {
         this.user_id=user_id;
         this.name = name;
         this.email = email;
         this.photo_url=photo_url;
-        }
+        this.type = type;
+    }
     public String getUser_id(){return user_id;}
     public void setUser_id(String user_id){this.user_id=user_id;}
 
@@ -40,4 +42,11 @@ public class User {
     public String getPhotoUrl(){return photo_url;}
     public void setPhotoUrl(String photo_url){ this.photo_url=photo_url;}
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

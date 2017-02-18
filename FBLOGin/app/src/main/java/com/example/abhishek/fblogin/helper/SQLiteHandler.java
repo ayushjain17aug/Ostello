@@ -25,14 +25,12 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     // Login table name
     private static final String TABLE_LOGIN = "login";
-    String CREATE_SEARCH_TABLE = "CREATE TABLE " + "search_table" + "("
-            + "_id" + " INTEGER PRIMARY KEY AUTOINCREMENT," + "name" + " TEXT,"
-            + "address" + " TEXT," + "phone_no" + " TEXT" + ")";
     // Login Table Columns names
     private static final String USER_ID = "id";
     private static final String NAME = "name";
     private static final String PHOTO_URL = "photo_url";
     private static final String EMAIL = "email";
+    private static final String TYPE = "type";
 
     public SQLiteHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -42,10 +40,9 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d("abhi", "In the On create");
         String CREATE_LOGIN_TABLE = "CREATE TABLE " + TABLE_LOGIN + "("
-                + USER_ID + " INTEGER PRIMARY KEY," + NAME + " TEXT,"
-                + EMAIL + " TEXT UNIQUE," + PHOTO_URL + " TEXT UNIQUE" + ")";
+                + USER_ID + " TEXT," + NAME + " TEXT,"
+                + EMAIL + " TEXT UNIQUE," + PHOTO_URL + " TEXT," + TYPE + " TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
         Log.d(TAG, "Database tables created");
     }
@@ -62,21 +59,20 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      */
-    //public void addUser(int user_id, String firstname, String lastname, String email,String phone,int verified,String college,String member_since,int count_event_registered) {
-    public void addUser(String user_id, String name, String email, String photoUrl)
+    public void addUser(User user)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-
+        Log.d("abhi", "adding User " + user.getName() + " " + user.getType());
         ContentValues values = new ContentValues();
-        values.put(USER_ID, user_id);
-        values.put(NAME, name); // Email
-        // values.put(LAST_NAME, lastname); // Email
-        values.put(EMAIL, email);
-        values.put(PHOTO_URL, photoUrl);
+        values.put(USER_ID, user.getUser_id());
+        values.put(NAME, user.getName());
+        values.put(EMAIL, user.getEmail());
+        values.put(PHOTO_URL, user.getPhotoUrl());
+        values.put(TYPE, user.getType());
         // Inserting Row
         long id = db.insert(TABLE_LOGIN, null, values);
         db.close(); // Closing database connection
-        Log.d(TAG, "New user inserted into sqlite: " + id);
+        Log.d("abhi", "New user inserted into sqlite: " + id);
     }
 
 
@@ -86,9 +82,9 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(USER_ID, user.getUser_id());
         values.put(NAME, user.getName());
-        //values.put(LAST_NAME, user.getLast_name());
         values.put(EMAIL, user.getEmail());
         values.put(PHOTO_URL, user.getPhotoUrl());
+        values.put(TYPE, user.getType());
          // updating row
         db.update(TABLE_LOGIN, values, USER_ID + " = ?",
                 new String[]{String.valueOf(user.getUser_id())});
@@ -110,6 +106,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
             user.setName(cursor.getString(1));
             user.setEmail(cursor.getString(2));
             user.setPhotoUrl(cursor.getString(3));
+            user.setType(cursor.getString(4));
             cursor.close();
         }
         db.close();
@@ -128,14 +125,6 @@ public class SQLiteHandler extends SQLiteOpenHelper {
         cursor.close();
         // return row count
         return rowCount;
-    }
-
-    public void updateeventscount(User user) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues value = new ContentValues();
-        //value.put(COUNT_EVENT_REGISTERED,user.getcount_event_registered());
-        db.update(TABLE_LOGIN, value, USER_ID + "=?", new String[]{String.valueOf(user.getUser_id())});
-
     }
 
     /**

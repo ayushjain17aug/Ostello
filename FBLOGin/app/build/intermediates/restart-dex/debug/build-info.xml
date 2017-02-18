@@ -5,33 +5,83 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="1799696276114730"
+    timestamp="1909019445417453"
     token="-4831945423393230769"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2207" />
+        duration="1937" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2556" />
+        duration="471" />
     <task
         name="verifier"
-        duration="533" />
+        duration="115" />
 
     <artifact
-        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="1799696276114730"
+        timestamp="1908364666187694"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="1908659570176865"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="1909019445417453"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+            type="DEX" />
+        <artifact
+            location="C:\Users\Abhishek\Desktop\Ostello\FBLOGin\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
