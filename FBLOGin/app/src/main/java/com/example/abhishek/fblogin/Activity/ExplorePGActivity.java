@@ -52,6 +52,7 @@ public class ExplorePGActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         db = new DataBaseHandler(getApplicationContext());
+        getPgList();
         pgList = db.getAllPGs();
         pgRecyclerView = (RecyclerView) findViewById(R.id.pg_recycler_view);
         pgRecyclerView.setLayoutManager(new LinearLayoutManager(pgRecyclerView.getContext()));
@@ -78,7 +79,8 @@ public class ExplorePGActivity extends AppCompatActivity {
                 return false;
             }
         });
-        getPgList();
+
+        db.close();
     }
 
     private void getPgList() {

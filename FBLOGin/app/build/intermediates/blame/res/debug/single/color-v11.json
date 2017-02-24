@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\User\\.android\\build-cache\\01e24947938cdadb7556920d8ed29b37164ab68e\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\Abhishek\\Desktop\\Ostello\\FBLOGin\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "C:\\Users\\User\\Desktop\\ostello\\FBLOGin\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\User\\.android\\build-cache\\01e24947938cdadb7556920d8ed29b37164ab68e\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

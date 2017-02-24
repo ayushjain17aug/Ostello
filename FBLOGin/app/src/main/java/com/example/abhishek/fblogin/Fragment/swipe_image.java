@@ -15,12 +15,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+import com.example.abhishek.fblogin.API.PG;
 import com.example.abhishek.fblogin.Adapter.swipe_pager_Adapter;
 import com.example.abhishek.fblogin.R;
+import com.example.abhishek.fblogin.helper.DataBaseHandler;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
 
 public class swipe_image extends Fragment implements ViewPager.OnPageChangeListener ,View.OnClickListener{
 
@@ -37,14 +38,7 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
     private swipe_pager_Adapter mAdapter;
     private ImageButton btnNext, btnPrevious;
     int currentPage = 0;
-
-    private int[] mImageResources = {
-            R.drawable.download,
-            R.drawable.ic_menu_gallery,
-            R.drawable.ic_menu_manage,
-            R.drawable.ic_menu_send,
-            R.drawable.ic_menu_share
-    };
+    private String[] mImageResources;
 
 
     @Override
@@ -55,14 +49,45 @@ public class swipe_image extends Fragment implements ViewPager.OnPageChangeListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_swipe_image, container, false);
         intro_images = (ViewPager) view.findViewById(R.id.viewpager);
         pager_indicator = (LinearLayout) view.findViewById(R.id.viewPagerCountDots);
+        DataBaseHandler db = new DataBaseHandler(getActivity().getApplicationContext());
 
         btnNext = (ImageButton) view.findViewById(R.id.btn_next);
         btnPrevious = (ImageButton) view.findViewById(R.id.btn_previous);
 
-         mAdapter = new swipe_pager_Adapter(getActivity(), mImageResources);
+
+        Bundle data = getArguments();
+        String active = data.getString("activityname");
+
+        if(active=="HostelActivity.java")
+        {
+            String hostelId = data.getString("hostelId");
+            PG pg = db.getPG(hostelId);
+            mImageResources = new String[]{
+                    pg.getImage_url1(),
+                    pg.getImage_url2(),
+                    pg.getImage_url3(),
+                    pg.getImage_url4(),
+                    pg.getImage_url5()
+            };
+            db.close();
+        }
+        else
+        {
+
+            mImageResources = new String[]{
+                    "http://images.shiksha.com/mediadata/images/1455102832php8CNi5r.jpeg",
+                    "http://images.shiksha.com/mediadata/images/1455102832php8CNi5r.jpeg",
+                    "http://images.shiksha.com/mediadata/images/1455102832php8CNi5r.jpeg",
+                    "http://images.shiksha.com/mediadata/images/1455102832php8CNi5r.jpeg",
+                    "http://images.shiksha.com/mediadata/images/1455102832php8CNi5r.jpeg"
+            };
+        }
+
+        mAdapter = new swipe_pager_Adapter(getActivity(), mImageResources);
 
         btnNext.setOnClickListener(this);
         btnPrevious.setOnClickListener(this);

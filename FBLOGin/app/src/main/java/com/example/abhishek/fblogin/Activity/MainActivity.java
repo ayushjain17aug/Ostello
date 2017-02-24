@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentTransaction top_fragment = getSupportFragmentManager().beginTransaction();
-        top_fragment.replace(R.id.top_placeholder,new swipe_image());
+        swipe_image frag = new swipe_image();
+        Bundle data = new Bundle();
+        data.putString("activityname","MainActivity.java");
+        frag.setArguments(data);
+        top_fragment.replace(R.id.top_placeholder,frag);
         top_fragment.commit();
     }
 
