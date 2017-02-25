@@ -6,7 +6,7 @@
     density="xxxhdpi"
     format="10"
     plugin-version="2.3.0-beta4"
-    timestamp="1487959714245"
+    timestamp="1488044393675"
     token="8605697519030204810"
     verifier="COMPATIBLE" >
 
@@ -15,7 +15,7 @@
         duration="0" />
     <task
         name="instant-run-dex"
-        duration="933" />
+        duration="0" />
     <task
         name="instant-run-transform"
         duration="0" />
@@ -26,23 +26,23 @@
     <artifact
         location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
         type="RESOURCES" />
-    <artifact
-        location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1487959565663"
+        timestamp="1488043994713"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
@@ -54,9 +54,6 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -72,15 +69,20 @@
             type="SPLIT" />
     </build>
     <build
+        build-mode="COLD"
+        timestamp="1488044155063"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
         build-mode="HOT_WARM"
-        timestamp="1487959714245"
+        timestamp="1488044393675"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
             type="RESOURCES" />
-        <artifact
-            location="C:\Users\User\Desktop\ostello\FBLOGin\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
